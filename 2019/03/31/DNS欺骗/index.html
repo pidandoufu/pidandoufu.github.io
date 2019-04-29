@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>DNS欺骗 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="实战DNS欺骗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DNS欺骗">
+<meta property="og:url" content="http://yoursite.com/2019/03/31/DNS欺骗/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="实战DNS欺骗">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/100.png">
+<meta property="og:image" content="http://yoursite.com/img/101.png">
+<meta property="og:image" content="http://yoursite.com/img/102.png">
+<meta property="og:image" content="http://yoursite.com/img/103.png">
+<meta property="og:image" content="http://yoursite.com/img/104.png">
+<meta property="og:image" content="http://yoursite.com/img/105.png">
+<meta property="og:image" content="http://yoursite.com/img/106.png">
+<meta property="og:image" content="http://yoursite.com/img/107.png">
+<meta property="og:image" content="http://yoursite.com/img/108.png">
+<meta property="og:image" content="http://yoursite.com/img/109.png">
+<meta property="og:image" content="http://yoursite.com/img/111.png">
+<meta property="og:image" content="http://yoursite.com/img/112.png">
+<meta property="og:image" content="http://yoursite.com/img/113.png">
+<meta property="og:image" content="http://yoursite.com/img/114.png">
+<meta property="og:image" content="http://yoursite.com/img/115.png">
+<meta property="og:image" content="http://yoursite.com/img/116.png">
+<meta property="og:image" content="http://yoursite.com/img/117.png">
+<meta property="og:updated_time" content="2019-03-31T13:41:50.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DNS欺骗">
+<meta name="twitter:description" content="实战DNS欺骗">
+<meta name="twitter:image" content="http://yoursite.com/img/100.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DNS欺骗" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/31/DNS欺骗/" class="article-date">
+  <time datetime="2019-03-31T13:06:58.000Z" itemprop="datePublished">2019-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DNS欺骗
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实战DNS欺骗"><a href="#实战DNS欺骗" class="headerlink" title=" 实战DNS欺骗"></a><strong> 实战DNS欺骗</strong></h1><a id="more"></a>
+<h4 id="DNS（Domain-Name-System，域名系统）欺骗："><a href="#DNS（Domain-Name-System，域名系统）欺骗：" class="headerlink" title="DNS（Domain Name System，域名系统）欺骗："></a>DNS（Domain Name System，域名系统）欺骗：</h4><p>DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻击者的主页，而不是用户想要取得的网站的主页了，这就是DNS欺骗的基本原理。</p>
+<p><img src="/img/100.png" alt></p>
+<h5 id="在kali-linux终端输入-ifconfig查看ip地址"><a href="#在kali-linux终端输入-ifconfig查看ip地址" class="headerlink" title="在kali linux终端输入 ifconfig查看ip地址"></a>在kali linux终端输入 ifconfig查看ip地址</h5><p>-——————– </p>
+<p><img src="/img/101.png" alt="img"></p>
+<h5 id="主机：192-168-113-129"><a href="#主机：192-168-113-129" class="headerlink" title="主机：192.168.113.129"></a>主机：192.168.113.129</h5><h5 id="要攻击的主机：192-168-113-131"><a href="#要攻击的主机：192-168-113-131" class="headerlink" title="要攻击的主机：192.168.113.131"></a>要攻击的主机：192.168.113.131</h5><h5 id="打开Ettercap"><a href="#打开Ettercap" class="headerlink" title="打开Ettercap"></a>打开Ettercap</h5><h5 id="利用locate找到文件的位置"><a href="#利用locate找到文件的位置" class="headerlink" title="利用locate找到文件的位置"></a>利用locate找到文件的位置</h5><h5 id="Locate-etter-conf"><a href="#Locate-etter-conf" class="headerlink" title="Locate etter.conf"></a>Locate etter.conf</h5><h5 id="文本编辑etter-conf"><a href="#文本编辑etter-conf" class="headerlink" title="文本编辑etter.conf"></a>文本编辑etter.conf</h5><h5 id="gedit-etc-ettercap-etter-conf，"><a href="#gedit-etc-ettercap-etter-conf，" class="headerlink" title="gedit /etc/ettercap/etter.conf，"></a>gedit /etc/ettercap/etter.conf，</h5><p><img src="/img/102.png" alt="img"></p>
+<h5 id="这里的参数设成0"><a href="#这里的参数设成0" class="headerlink" title="这里的参数设成0"></a>这里的参数设成0</h5><p><img src="/img/103.png" alt="img"></p>
+<h5 id="去掉前面的-，也叫作哈希标识-打开Iptables"><a href="#去掉前面的-，也叫作哈希标识-打开Iptables" class="headerlink" title="去掉前面的#，也叫作哈希标识,打开Iptables"></a>去掉前面的#，也叫作哈希标识,打开Iptables</h5><p><img src="/img/104.png" alt="img"></p>
+<h5 id="打开ettercap，首先scan-forhosts然后打开host-list"><a href="#打开ettercap，首先scan-forhosts然后打开host-list" class="headerlink" title="打开ettercap，首先scan forhosts然后打开host list"></a>打开ettercap，首先scan forhosts然后打开host list</h5><p><img src="/img/105.png" alt="img"></p>
+<h5 id="将192-168-113-2设为target2-192-168-113-131设为target1"><a href="#将192-168-113-2设为target2-192-168-113-131设为target1" class="headerlink" title="将192.168.113.2设为target2,192.168.113.131设为target1"></a>将192.168.113.2设为target2,192.168.113.131设为target1</h5><h5 id="这里的192-168-113-2是网关，可以用route-n查看"><a href="#这里的192-168-113-2是网关，可以用route-n查看" class="headerlink" title="这里的192.168.113.2是网关，可以用route -n查看"></a>这里的192.168.113.2是网关，可以用route -n查看</h5><p><img src="/img/106.png" alt="img"></p>
+<p><img src="/img/107.png" alt="img"></p>
+<h5 id="然后我们转到中间人攻击的选项"><a href="#然后我们转到中间人攻击的选项" class="headerlink" title="然后我们转到中间人攻击的选项"></a>然后我们转到中间人攻击的选项</h5><h5 id="选择ARP毒化mitm–ARP-Poisoning–sniff-remote-connections"><a href="#选择ARP毒化mitm–ARP-Poisoning–sniff-remote-connections" class="headerlink" title="选择ARP毒化mitm–ARP Poisoning–sniff remote connections"></a>选择ARP毒化mitm–ARP Poisoning–sniff remote connections</h5><h5 id="用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击-MITM-。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。"><a href="#用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击-MITM-。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。" class="headerlink" title="用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击(MITM)。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。"></a>用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击(MITM)。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。</h5><p>-——————– </p>
+<p><img src="/img/108.png" alt="img"></p>
+<h5 id="打开plugins-点击DNS欺骗插件dns-sproof来激活它"><a href="#打开plugins-点击DNS欺骗插件dns-sproof来激活它" class="headerlink" title="打开plugins 点击DNS欺骗插件dns_sproof来激活它"></a>打开plugins 点击DNS欺骗插件dns_sproof来激活它</h5><p><img src="/img/109.png" alt="img"></p>
+<h5 id="然后进入文本编辑修改etter-dns"><a href="#然后进入文本编辑修改etter-dns" class="headerlink" title="然后进入文本编辑修改etter.dns"></a>然后进入文本编辑修改etter.dns</h5><h5 id="终端命令：gedit-etc-ettercap-etter-dns"><a href="#终端命令：gedit-etc-ettercap-etter-dns" class="headerlink" title="终端命令：gedit /etc/ettercap/etter.dns"></a>终端命令：gedit /etc/ettercap/etter.dns</h5><p><img src="/img/111.png" alt="img"></p>
+<h5 id="接着跳转到"><a href="#接着跳转到" class="headerlink" title="接着跳转到"></a>接着跳转到</h5><h5 id="var文件夹-www文件夹-然后是html文件夹"><a href="#var文件夹-www文件夹-然后是html文件夹" class="headerlink" title="var文件夹 www文件夹 然后是html文件夹"></a>var文件夹 www文件夹 然后是html文件夹</h5><h5 id="index-html打开是这样的，我们现在选择文本编辑它"><a href="#index-html打开是这样的，我们现在选择文本编辑它" class="headerlink" title="index.html打开是这样的，我们现在选择文本编辑它"></a>index.html打开是这样的，我们现在选择文本编辑它</h5><p><img src="/img/112.png" alt="img"></p>
+<p><img src="/img/113.png" alt="img"></p>
+<p><img src="/img/114.png" alt="img"></p>
+<h5 id="开启apache服务器，这样我们的机子就变成网页服务器了"><a href="#开启apache服务器，这样我们的机子就变成网页服务器了" class="headerlink" title="开启apache服务器，这样我们的机子就变成网页服务器了"></a>开启apache服务器，这样我们的机子就变成网页服务器了</h5><p>命令：service apache2 start</p>
+<p><img src="/img/115.png" alt="img"></p>
+<p>接下来，在目标主机centos上输入KAIL的IP地址</p>
+<p><img src="/img/116.png" alt="img"></p>
+<h5 id="我们可以在ettercap看到，microsoft-com被定位到168-192-113-129"><a href="#我们可以在ettercap看到，microsoft-com被定位到168-192-113-129" class="headerlink" title="我们可以在ettercap看到，microsoft.com被定位到168.192.113.129"></a>我们可以在ettercap看到，microsoft.com被定位到168.192.113.129</h5><p><img src="/img/117.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/31/DNS欺骗/" data-id="cjv2e6o4a0002nwwf91k2rqim" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/01/状态码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          状态码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/31/Php-mysql-html简单留言板制作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Php+mysql+html简单留言板制作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

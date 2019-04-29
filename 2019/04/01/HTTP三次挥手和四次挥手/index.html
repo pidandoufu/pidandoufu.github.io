@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTTP三次挥手和四次挥手 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="大鲨鱼数据包拦截，http三次握手和四次挥手">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP三次挥手和四次挥手">
+<meta property="og:url" content="http://yoursite.com/2019/04/01/HTTP三次挥手和四次挥手/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="大鲨鱼数据包拦截，http三次握手和四次挥手">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/三次挥手1.png">
+<meta property="og:image" content="http://yoursite.com/img/三次挥手.png">
+<meta property="og:image" content="http://yoursite.com/img/四次挥手1.png">
+<meta property="og:image" content="http://yoursite.com/img/四次挥手.png">
+<meta property="og:updated_time" content="2019-04-01T13:43:59.924Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP三次挥手和四次挥手">
+<meta name="twitter:description" content="大鲨鱼数据包拦截，http三次握手和四次挥手">
+<meta name="twitter:image" content="http://yoursite.com/img/三次挥手1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HTTP三次挥手和四次挥手" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/01/HTTP三次挥手和四次挥手/" class="article-date">
+  <time datetime="2019-04-01T13:35:29.000Z" itemprop="datePublished">2019-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTTP三次挥手和四次挥手
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="大鲨鱼数据包拦截，http三次握手和四次挥手"><a href="#大鲨鱼数据包拦截，http三次握手和四次挥手" class="headerlink" title="大鲨鱼数据包拦截，http三次握手和四次挥手"></a>大鲨鱼数据包拦截，http三次握手和四次挥手</h4><a id="more"></a>
+<h2 id="http-三次握手"><a href="#http-三次握手" class="headerlink" title="http  三次握手"></a><strong>http  三次握手</strong></h2><p>​        <img src="/img/三次挥手1.png" alt></p>
+<p><img src="/img/三次挥手.png" alt></p>
+<p><strong>SYN是标志位，SYN=1表示请求连接</strong></p>
+<hr>
+<h5 id="第一次握手：Server-猜测Client可能要建立TCP请求，但不确定，因为也可能是Client乱发了一个数据包给自己"><a href="#第一次握手：Server-猜测Client可能要建立TCP请求，但不确定，因为也可能是Client乱发了一个数据包给自己" class="headerlink" title="*第一次握手：Server 猜测Client可能要建立TCP请求，但不确定，因为也可能是Client乱发了一个数据包给自己**"></a>*第一次握手：Server 猜测Client可能要建立TCP请求，但不确定，因为也可能是Client乱发了一个数据包给自己**</h5><p>​        <strong>第二次握手：通过ack=J+1，Client知道Server是支持TCP的，且理解了自己要建立TCP连接的意图</strong></p>
+<p>​        <strong>第三次握手：通过ack=K+1，Server知道Client是支持TCP的，且确实是要建立TCP连接</strong></p>
+<p><strong>SYN是标志位，SYN=1表示请求连接</strong></p>
+<hr>
+<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p><img src="/img/四次挥手1.png" alt></p>
+<p><img src="/img/四次挥手.png" alt></p>
+<hr>
+<p><strong>第一次挥手：首先PC1向PC2发送断开请求，FIN断开位=1，发送完事PC1立马进入fin_wait_1 第一次半关闭状态</strong></p>
+<p><strong>第二次挥手：PC2向PC1进行回复，ACK确定位置为1，ACK=1，发送确定完自身进入close_wait关闭等待状态。PC1收到后就等待PC2向自己发起断开请求了，自己进入第二次半关闭状态。</strong> </p>
+<p><strong>第三次挥手：PC2向PC1发起断开请求，发送FIN=1，自己进入last_ack,最后确认半关闭状态。</strong> </p>
+<p><strong>第四次挥手：PC1收到消息后进行回复，ACK确认位=1，发送完自身进入time_wait等待，此时不论对方有没有接收到确认信息，自身都会等待4分钟才能断开，而PC2假如立即收到确认消息，会立马断开，如果没有收到消息，会继续接收，直到接收到PC1的确认消息或4分钟后跟PC1一块自动断开</strong>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/01/HTTP三次挥手和四次挥手/" data-id="cjv2e6o4c0003nwwfvf7ax8mn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/08/msf浏览器自动攻击/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          msf浏览器自动攻击
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/01/状态码/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">状态码</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

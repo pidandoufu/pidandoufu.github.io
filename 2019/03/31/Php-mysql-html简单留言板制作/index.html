@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Php+mysql+html简单留言板制作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Php+mysql+html简单留言板制作">
+<meta property="og:url" content="http://yoursite.com/2019/03/31/Php-mysql-html简单留言板制作/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/img121.png">
+<meta property="og:image" content="http://yoursite.com/img/img122.png">
+<meta property="og:image" content="http://yoursite.com/img/img123.png">
+<meta property="og:image" content="http://yoursite.com/img/img124.png">
+<meta property="og:image" content="http://yoursite.com/img/img121.png">
+<meta property="og:image" content="http://yoursite.com/img/img128.png">
+<meta property="og:image" content="http://yoursite.com/img/img125.png">
+<meta property="og:image" content="http://yoursite.com/img/img126.png">
+<meta property="og:image" content="http://yoursite.com/img/img127.png">
+<meta property="og:updated_time" content="2019-03-31T03:27:14.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Php+mysql+html简单留言板制作">
+<meta name="twitter:description" content="准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）">
+<meta name="twitter:image" content="http://yoursite.com/img/img121.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Php-mysql-html简单留言板制作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/31/Php-mysql-html简单留言板制作/" class="article-date">
+  <time datetime="2019-03-31T02:26:53.000Z" itemprop="datePublished">2019-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Php+mysql+html简单留言板制作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）"><a href="#准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）" class="headerlink" title="准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）"></a>准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）</h1><a id="more"></a>
+<ul>
+<li><h5 id="数据库两个-一个用来储存用户信息，一个用来存储留言信息"><a href="#数据库两个-一个用来储存用户信息，一个用来存储留言信息" class="headerlink" title="数据库两个 一个用来储存用户信息，一个用来存储留言信息"></a>数据库两个 一个用来储存用户信息，一个用来存储留言信息</h5></li>
+</ul>
+<h3 id="首先给大家展示下效果图"><a href="#首先给大家展示下效果图" class="headerlink" title="首先给大家展示下效果图"></a>首先给大家展示下效果图</h3><p><img src="/img/img121.png" alt></p>
+<p><img src="/img/img122.png" alt></p>
+<h4 id="1-下面就开始我留言板制作：首先设计我们登陆页面，首先我们需要搭建一个登录页面，denglu-php如下图，"><a href="#1-下面就开始我留言板制作：首先设计我们登陆页面，首先我们需要搭建一个登录页面，denglu-php如下图，" class="headerlink" title="1.下面就开始我留言板制作：首先设计我们登陆页面，首先我们需要搭建一个登录页面，denglu.php如下图，"></a>1.下面就开始我留言板制作：首先设计我们登陆页面，首先我们需要搭建一个登录页面，denglu.php如下图，</h4><p><img src="/img/img123.png" alt></p>
+<h4 id="denglu-php前端代码如下："><a href="#denglu-php前端代码如下：" class="headerlink" title="denglu.php前端代码如下："></a>denglu.php前端代码如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body bgcolor=&quot;#7fffd4&quot;&gt;</span><br><span class="line">    &lt;center&gt;</span><br><span class="line">        &lt;h1&gt;用户登录&lt;/h1&gt;</span><br><span class="line">        &lt;hr color=&quot;&quot; width=&quot;80%&quot;&gt;&lt;br&gt;</span><br><span class="line">&lt;form action=&quot;dodenglu.php&quot;  method=&quot;post&quot;&gt;</span><br><span class="line"></span><br><span class="line">    用户名 :&lt;input type=&quot;text&quot; name=&quot;uid&quot; placeholder=&quot;请输入账户&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">    密码：&lt;input type=&quot;text&quot; name=&quot;password&quot; placeholder=&quot;请输入密码&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr color=&quot;&quot; width=&quot;80%&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;登陆&quot; &gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=&quot;button&quot;  value=&apos;注册&apos; onclick=&quot;location.href=&apos;zhuce.php&apos;&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/center&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="然后编写做登录页面dodenglu-php的后端代码如下："><a href="#然后编写做登录页面dodenglu-php的后端代码如下：" class="headerlink" title="然后编写做登录页面dodenglu.php的后端代码如下："></a>然后编写做登录页面dodenglu.php的后端代码如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require_once &quot;connet.php&quot;;</span><br><span class="line">require_once &quot;mysqlconfig.php&quot;;</span><br><span class="line">$id=$_POST[&apos;uid&apos;];</span><br><span class="line">session_start();</span><br><span class="line">$_SESSION[&quot;uid&quot;]=$id;</span><br><span class="line">$password=$_POST[&apos;password&apos;];</span><br><span class="line">$ma1=new DB();</span><br><span class="line">      $link=$ma1-&gt;connect();</span><br><span class="line">      $sql=&quot;select *from yonghu where username=&apos;$id&apos;and password=&apos;$password&apos;&quot;;</span><br><span class="line">      $row=$ma1-&gt;CheckUser($link,$sql);</span><br><span class="line">      if ($row)&#123;</span><br><span class="line">          header(&quot;location:liuyan.php&quot;);</span><br><span class="line">      &#125;;</span><br><span class="line">      if (!$row)&#123;</span><br><span class="line">          echo &quot;&lt;script&gt;alert(&apos;登录失败，账号密码错误&apos;);location=&apos;denglu.php&apos;&lt;/script&gt;&quot;;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="然后是我们注册页面zhuce-php如图，"><a href="#然后是我们注册页面zhuce-php如图，" class="headerlink" title="然后是我们注册页面zhuce.php如图，"></a>然后是我们注册页面zhuce.php如图，</h4><p><img src="/img/img124.png" alt></p>
+<h4 id="前端代码如下："><a href="#前端代码如下：" class="headerlink" title="前端代码如下："></a>前端代码如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">body&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;h1&gt;用户注册&lt;/h1&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">&lt;form  action=&quot;dozhuce.php &quot; method=&quot;post&quot;&gt;</span><br><span class="line">     用户名 :&lt;input type=&quot;text&quot; name=&quot;id&quot; placeholder=&quot;请输入账户&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">     密码：&lt;input type=&quot;text&quot; name=&quot;password&quot; placeholder=&quot;密码&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &lt;input type=&quot;submit&quot;  value=&quot;注册&quot; &gt;</span><br><span class="line">     &lt;input type=&quot;button&quot;  value=&apos;返回&apos; onclick=&quot;location.href=&apos;denglu.php&apos;&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="前端后台运行代码dozhuce-php"><a href="#前端后台运行代码dozhuce-php" class="headerlink" title="前端后台运行代码dozhuce.php:"></a>前端后台运行代码dozhuce.php:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">require_once &quot;connet.php&quot;;</span><br><span class="line">require_once &quot;mysqlconfig.php&quot;;</span><br><span class="line">$ma1=new DB();</span><br><span class="line">$link=$ma1-&gt;connect();</span><br><span class="line">$id=$_POST[&apos;id&apos;];</span><br><span class="line">$password=$_POST[&apos;password&apos;];</span><br><span class="line"></span><br><span class="line">if ($id!=null&amp;&amp;$password!=null)&#123;</span><br><span class="line">    $ma =new DB();</span><br><span class="line">    $link=$ma-&gt;connect();</span><br><span class="line">    $sql=&quot;insert into yonghu (username,password) values(&apos;$id&apos;,&apos;$password&apos;)&quot;;</span><br><span class="line">//    for($i=0;$i&lt;count($result);$i++)&#123;</span><br><span class="line">    if(mysqli_query($link,$sql))&#123;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&apos;注册成功&apos;);location=&apos;zhuce.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&apos;注册失败，请输入账号密码&apos;);location=&apos;zhuce.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="然后进入我们留言页面liuyan-php，如图，"><a href="#然后进入我们留言页面liuyan-php，如图，" class="headerlink" title="然后进入我们留言页面liuyan.php，如图，"></a>然后进入我们留言页面liuyan.php，如图，</h4><p><img src="/img/img121.png" alt></p>
+<h4 id="前端代码："><a href="#前端代码：" class="headerlink" title="前端代码："></a>前端代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body bgcolor=&quot;#7fffd4&quot; &gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">      &lt;h1&gt;留言板&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">     &lt;input type=&quot;button&quot;value=&quot;添加留言&quot; onclick=&quot;location.href=&apos;liuyan.php&apos;&quot; &gt;</span><br><span class="line">    &lt;input type=&quot;button&quot;value=&quot;查看留言&quot; onclick=&quot;location.href=&apos;show.php&apos;&quot; &gt;</span><br><span class="line">    &lt;input type=&quot;button&quot;value=&quot;退出登录&quot; onclick=&quot;location.href=&apos;denglu.php&apos;&quot; &gt;</span><br><span class="line">    &lt;hr width=&quot;70%&quot;&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">    &lt;form action=&quot;addliuyan.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">       留言主题</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;title&quot; placeholder=&quot;主题&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">        你的名字</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;author&quot; placeholder=&quot;名字&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">       &lt;span&gt; 留言内容&lt;/span&gt;</span><br><span class="line">         &lt;textarea name=&quot;content&quot;placeholder=&quot;内容&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">        &lt;br&gt;&lt;br&gt;&lt;hr width=&quot;70%&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;提交&quot; class=&quot;submit&quot;&gt;</span><br><span class="line">        &lt;input type = &quot;reset&quot; value = &quot;重置&quot; class=&quot;reset&quot;&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/center&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="运行界面addliuyan-php-代码如下"><a href="#运行界面addliuyan-php-代码如下" class="headerlink" title="运行界面addliuyan.php,代码如下"></a>运行界面addliuyan.php,代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * Created by PhpStorm.</span><br><span class="line"> * User: 97364</span><br><span class="line"> * Date: 2019-03-30</span><br><span class="line"> * Time: 15:00</span><br><span class="line"> */</span><br><span class="line">session_start();</span><br><span class="line">$id=$_SESSION[&quot;uid&quot;];</span><br><span class="line">$title=$_POST[&quot;title&quot;];</span><br><span class="line">$author=$_POST[&quot;author&quot;];</span><br><span class="line">$id=$_SESSION[&quot;uid&quot;];</span><br><span class="line"></span><br><span class="line">$content=$_POST[&quot;content&quot;];</span><br><span class="line">require_once &quot;connet.php&quot;;</span><br><span class="line">require_once &apos;mysqlconfig.php&apos;;</span><br><span class="line">$ma1=new DB();</span><br><span class="line"></span><br><span class="line">$link=$ma1-&gt;connect();</span><br><span class="line">$sql=&quot;insert into liuyanban(id,user,title,author,liuyan,time )values ( null,&apos;$id&apos;,&apos;$title&apos;,&apos;$author&apos;,&apos;$content&apos;,now())&quot;;</span><br><span class="line">if ($title!=null)&#123;</span><br><span class="line">    if($author!=null)&#123;</span><br><span class="line">        $ressult=$ma1-&gt;insertl($link,$sql);</span><br><span class="line">    &#125;;</span><br><span class="line">    if ($author==null)&#123;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&apos;请输入留言者！&apos;);location=&apos;liuyan.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">if ($title==null)&#123;</span><br><span class="line">    echo &quot;&lt;script&gt;alert(&apos;请输入留言标题！&apos;);location=&apos;liuyan.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="然后是查看留言界面-show-php（因为php-前端和后台是可以混写的，这个页面写在了一起）"><a href="#然后是查看留言界面-show-php（因为php-前端和后台是可以混写的，这个页面写在了一起）" class="headerlink" title="然后是查看留言界面 show.php（因为php 前端和后台是可以混写的，这个页面写在了一起）:"></a>然后是查看留言界面 show.php（因为php 前端和后台是可以混写的，这个页面写在了一起）:</h4><h4 id="页面图片："><a href="#页面图片：" class="headerlink" title="页面图片："></a>页面图片：</h4><p><img src="/img/img128.png" alt></p>
+<h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&apos;Content-type: text/html; charset=UTF8&apos;);</span><br><span class="line">session_start();</span><br><span class="line">$id=$_SESSION[&apos;uid&apos;];</span><br><span class="line">?&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;我的留言板.查看留言&lt;/title&gt;</span><br><span class="line">    &lt;link &gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body  bgcolor=&quot;#7fffd4&quot;&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;form &gt;</span><br><span class="line">    &lt;h2 &gt;我的留言板&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;input type=&quot;button&quot;value=&quot;添加留言&quot; onclick=&quot;location.href=&apos;liuyan.php&apos;&quot; &gt;</span><br><span class="line"></span><br><span class="line">        &lt;input type=&quot;button&quot;value=&quot;退出登录&quot; onclick=&quot;location.href=&apos;denglu.php&apos;&quot; &gt;</span><br><span class="line">    &lt;hr width = &quot;70%&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;table  bgcolor=&quot;#adff2f&quot; border=&quot;1&quot;  width=&quot;80%&quot;&gt;</span><br><span class="line">&lt;thead&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">    &lt;th&gt;序号&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;账户&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;标题&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;发布者&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;留言&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;时间&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;操作&lt;/th&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/thead&gt;</span><br><span class="line"></span><br><span class="line">    &lt;?php</span><br><span class="line"></span><br><span class="line">    require_once &quot;connet.php&quot;;</span><br><span class="line">    require_once &quot;mysqlconfig.php&quot;;</span><br><span class="line"></span><br><span class="line">    $ma1=new DB();</span><br><span class="line">    $link=$ma1-&gt;connect();</span><br><span class="line">    $sql=&quot;select * from liuyanban where user=&apos;$id&apos; &quot;;</span><br><span class="line">    $res=mysqli_query($link,$sql);//执行语句</span><br><span class="line">    $news =array();//保存取出记录</span><br><span class="line">          $k=1;//id序号</span><br><span class="line">    while ($row=mysqli_fetch_array($res))&#123;</span><br><span class="line">        //$news[]=$row ;</span><br><span class="line"></span><br><span class="line">        $idd=$row[&apos;id&apos;];</span><br><span class="line">        echo &quot;&lt;tr&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.($k).&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.$row[&apos;user&apos;].&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.$row[&apos;title&apos;].&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.$row[&apos;author&apos;].&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.$row[&apos;liuyan&apos;].&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.$row[&apos;time&apos;].&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;td&gt;&quot;.&quot;&lt;a href=&apos;del.php?id=$idd &apos; &gt;删除&lt;/a&gt;&quot;.&quot;&lt;/td&gt;&quot;;</span><br><span class="line">        echo &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">        $k++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //包含显示文件</span><br><span class="line">    ?&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="随后是我们做删除的代码del-php"><a href="#随后是我们做删除的代码del-php" class="headerlink" title="随后是我们做删除的代码del.php:"></a>随后是我们做删除的代码del.php:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * Created by PhpStorm.</span><br><span class="line"> * User: 97364</span><br><span class="line"> * Date: 2019-03-30</span><br><span class="line"> * Time: 23:03</span><br><span class="line"> */</span><br><span class="line">header(&apos;Content-type: text/html; charset=UTF8&apos;);</span><br><span class="line">$id =isset($_GET[&apos;id&apos;])?(integer)$_GET[&apos;id&apos;]:0; //接受页面传过来的ID</span><br><span class="line">if ($id==0)&#123;</span><br><span class="line">    //</span><br><span class="line">    header(&apos;Refresh:2;url=show.php&apos;);</span><br><span class="line">    echo &apos;当前要删除的留言不存在！&apos;;</span><br><span class="line">    exit;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">   require_once &quot;connet.php&quot;;</span><br><span class="line">   require_once &quot;mysqlconfig.php&quot;;</span><br><span class="line">   $ma1=new DB();</span><br><span class="line">   $link=$ma1-&gt;connect();</span><br><span class="line">   $sql =&quot;delete from liuyanban where id=$id&quot;;</span><br><span class="line">   $res=mysqli_query($link,$sql);//执行删除语句</span><br><span class="line">   header(&apos;Refresh:2;url=show.php&apos;);//刷新当前页面</span><br><span class="line">   echo &apos;当前留言删除成功&apos;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数据库文件connect-php"><a href="#数据库文件connect-php" class="headerlink" title="数据库文件connect.php:"></a>数据库文件connect.php:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;DB_HOST&apos;,&apos;localhost&apos;);</span><br><span class="line">define(&apos;DB_USER&apos;,&apos;root&apos;);用户名</span><br><span class="line">define(&apos;DB_PWD&apos;,&apos;123&apos;);密码</span><br><span class="line">define(&apos;DB_DBNAME&apos;,&apos;boke&apos;,&apos;liuyanban&apos;）本地数据库 和表名</span><br></pre></td></tr></table></figure>
+<h4 id="数据库配置文件mysqlconfig-php"><a href="#数据库配置文件mysqlconfig-php" class="headerlink" title="数据库配置文件mysqlconfig.php:"></a>数据库配置文件mysqlconfig.php:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"> class DB&#123;</span><br><span class="line">     function  connect()&#123;</span><br><span class="line">         @$link=mysqli_connect(DB_HOST,DB_DBNAME,DB_PWD);//连接数据库</span><br><span class="line">         mysqli_select_db($link,DB_DBNAME)or die(&apos;数据库打开失败&apos;);//选择数据库</span><br><span class="line">         if (mysqli_connect_error())</span><br><span class="line">         &#123;</span><br><span class="line">             die( &apos;数据库连接失败:&apos;.mysqli_connect_error());</span><br><span class="line">         &#125;</span><br><span class="line">         return $link;</span><br><span class="line">     &#125;</span><br><span class="line">     function insert($link,$sql)&#123;</span><br><span class="line">         if (mysqli_query($link,$sql))&#123;</span><br><span class="line">             echo &quot;&lt;script language=&apos;javascript&apos;&gt;alert(&apos;注册成功!&apos;);location=&apos;denglu.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">         &#125;else&#123;</span><br><span class="line">             echo &quot;数据插入失败:&quot;.$link-&gt;error;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     function   CheckUser($link,$sql)&#123;</span><br><span class="line">         $result=mysqli_query($link,$sql);</span><br><span class="line">         $row =mysqli_num_rows($result);</span><br><span class="line">          if ($row!=0)&#123;</span><br><span class="line">              return true;</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">              return flase;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     function insertl($link,$sql)</span><br><span class="line">     &#123;</span><br><span class="line">         if (mysqli_query($link, $sql)) &#123;</span><br><span class="line">             echo &quot;&lt;script language=&apos;javascript&apos;&gt;alert(&apos;留言成功&apos;);location=&apos;liuyan.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line">         &#125; else &#123;</span><br><span class="line">             echo &quot;数据插入失败：&quot; . $link-&gt;error;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="这是我本地数据库的配置："><a href="#这是我本地数据库的配置：" class="headerlink" title="这是我本地数据库的配置："></a>这是我本地数据库的配置：</h4><p><img src="/img/img125.png" alt></p>
+<p><img src="/img/img126.png" alt></p>
+<p><img src="/img/img127.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/31/Php-mysql-html简单留言板制作/" data-id="cjv2e6o5k000enwwfdeek3w5l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/31/DNS欺骗/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          DNS欺骗
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/27/Cobalt-Strike渗透工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"> Cobalt Strike渗透工具</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
