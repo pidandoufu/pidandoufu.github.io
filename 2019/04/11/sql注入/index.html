@@ -39,10 +39,9 @@
 	<div id="preloader">
 		<div class="pre-container">
 			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
 				</div>
 						
 		</div>
@@ -50,7 +49,7 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://pidandoufu.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://pidandoufu.github.io/Random-img/">
 	<div class="mask">
 		<!-- Logo and navigation -->
 		<div class="h-header">
@@ -334,7 +333,22 @@
 		
 		
 
+	
+    <span class="leancloud_visitors" id="/2019/04/11/sql注入/_visitors" data-url="/2019/04/11/sql注入/" data-title="sql注入(一)">
+       	<i class="fa fa-eye"></i>
+       	热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
 
+
+
+	
+    <span class="leancloud_likes" id="/2019/04/11/sql注入/_likes" data-url="/2019/04/11/sql注入/" data-title="sql注入(一)" rel="unlike">
+        <i class="fa fa-heart"></i>
+        喜欢
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
 
 	</div>
 
@@ -762,14 +776,45 @@ DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒�
 	
 
 		
-			
-			<!-- socialShare share -->
-			<div class="social-share"></div>
 
-<!--  css & js -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			<!-- baiduShare share -->
 			
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a>
+</div>
+<script>
+	window._bd_share_config = {
+		"common": {
+			"bdSnsKey": {},
+			"bdText": "",
+			"bdMini": "2",
+			"bdMiniList": false,
+			"bdPic": "",
+			"bdStyle": "1",
+			"bdSize": "24"
+		},
+		"share": {},
+		"selectShare": {
+			"bdContainerClass": null,
+			"bdSelectMiniList": ["weixin", "sqq", "tsina", "douban", "twi", "fbook", "print"]
+		}
+	};
+	with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+
+
+	<!--
+		You can add slide style!
+   -->
+
 		
 		
 	
@@ -803,6 +848,14 @@ DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒�
 				参考了01 & 02进行简单的设计与实现
 -->
 
+
+
+	<script>
+		var appid = 'c5yHpxsfBezyL63Cc0j944AO-gzGzohsz',
+            appkey = 'rIThh3fiTKaS1x2ciuf2CTi3';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
 
 	
 
@@ -1047,6 +1100,23 @@ DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒�
 		<div class="local-search-footer">
 			<div class="topN-post">				
 				
+
+   
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
+	
+    <script>
+        var appid = 'c5yHpxsfBezyL63Cc0j944AO-gzGzohsz',
+            appkey = 'rIThh3fiTKaS1x2ciuf2CTi3',
+            limitCount = 10;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
 								
 			</div>
 		</div>
@@ -1074,8 +1144,6 @@ DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒�
 
 
 <!-- love effect -->
-
-	<script src="/plugin/love/love.js"></script>
 
 
 <!-- back to top -->
