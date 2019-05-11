@@ -320,7 +320,13 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/csrf/" class=" ">
+			csrf
+		</a>
+	
+		
 		</span>
 		
 		
@@ -345,7 +351,8 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="CSRF-Crosss-Site-Request-Forgery，跨站请求伪造-是一种网络攻击方式，也被产称为“One-Click-Attack”或者Session-Riding-通常缩写为CSRF或者XSRF"><a href="#CSRF-Crosss-Site-Request-Forgery，跨站请求伪造-是一种网络攻击方式，也被产称为“One-Click-Attack”或者Session-Riding-通常缩写为CSRF或者XSRF" class="headerlink" title="CSRF(Crosss  Site Request Forgery，跨站请求伪造)是一种网络攻击方式，也被产称为“One  Click Attack”或者Session Riding,通常缩写为CSRF或者XSRF."></a>CSRF(Crosss  Site Request Forgery，跨站请求伪造)是一种网络攻击方式，也被产称为“One  Click Attack”或者Session Riding,通常缩写为CSRF或者XSRF.</h3><h3 id="CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。"><a href="#CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。" class="headerlink" title="CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。"></a>CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。</h3><p><img src="/img/CSRF.jpg" alt></p>
+		<h3 id="CSRF-Crosss-Site-Request-Forgery，跨站请求伪造-是一种网络攻击方式，也被产称为“One-Click-Attack”或者Session-Riding-通常缩写为CSRF或者XSRF"><a href="#CSRF-Crosss-Site-Request-Forgery，跨站请求伪造-是一种网络攻击方式，也被产称为“One-Click-Attack”或者Session-Riding-通常缩写为CSRF或者XSRF" class="headerlink" title="CSRF(Crosss  Site Request Forgery，跨站请求伪造)是一种网络攻击方式，也被产称为“One  Click Attack”或者Session Riding,通常缩写为CSRF或者XSRF."></a>CSRF(Crosss  Site Request Forgery，跨站请求伪造)是一种网络攻击方式，也被产称为“One  Click Attack”或者Session Riding,通常缩写为CSRF或者XSRF.</h3><a id="more"></a>
+<h3 id="CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。"><a href="#CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。" class="headerlink" title="CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。"></a>CSRF漏洞是因为web应用程序在用户进行敏感操作时，如修改账号密码、添加账号、转账等，没有校验表单token或者http请求头中的referer值，从而导致恶意攻击者利用普通用户的身份（cookie）完成攻击行为。</h3><p><img src="/img/CSRF.jpg" alt></p>
 <h4 id="从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤："><a href="#从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤：" class="headerlink" title="从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤：  　"></a>从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤：  　</h4><h5 id="1-登录受信任网站A，A网站给用户分配cookie，并在本地生成Cookie。"><a href="#1-登录受信任网站A，A网站给用户分配cookie，并在本地生成Cookie。" class="headerlink" title="1.登录受信任网站A，A网站给用户分配cookie，并在本地生成Cookie。  　"></a>1.登录受信任网站A，A网站给用户分配cookie，并在本地生成Cookie。  　</h5><h5 id="2-在不登出A的情况下，访问危险网站B-同一个浏览器中-。"><a href="#2-在不登出A的情况下，访问危险网站B-同一个浏览器中-。" class="headerlink" title="2.在不登出A的情况下，访问危险网站B(同一个浏览器中)。"></a>2.在不登出A的情况下，访问危险网站B(同一个浏览器中)。</h5><h5 id="3-B通过用户的cookie，向A站发送了请求"><a href="#3-B通过用户的cookie，向A站发送了请求" class="headerlink" title="3.B通过用户的cookie，向A站发送了请求"></a>3.B通过用户的cookie，向A站发送了请求</h5><h5 id="4-而A站并没有验证请求的来源，而导致恶意请求成功。"><a href="#4-而A站并没有验证请求的来源，而导致恶意请求成功。" class="headerlink" title="4.而A站并没有验证请求的来源，而导致恶意请求成功。"></a>4.而A站并没有验证请求的来源，而导致恶意请求成功。</h5><h4 id="CSRF漏洞产生的条件："><a href="#CSRF漏洞产生的条件：" class="headerlink" title="CSRF漏洞产生的条件："></a>CSRF漏洞产生的条件：</h4><ol>
 <li><h5 id="正常用户需要登录网站"><a href="#正常用户需要登录网站" class="headerlink" title="正常用户需要登录网站"></a>正常用户需要登录网站</h5></li>
 <li><h5 id="攻击者需要知道站点请求内容（构造恶意请求）"><a href="#攻击者需要知道站点请求内容（构造恶意请求）" class="headerlink" title="攻击者需要知道站点请求内容（构造恶意请求）"></a>攻击者需要知道站点请求内容（构造恶意请求）</h5></li>
@@ -385,7 +392,7 @@
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
 		
-			<a href="/2019/05/07/XSS漏洞利用和beef使用/" title="XSS漏洞利用和beef使用" rel="next">
+			<a href="/2019/05/08/XSS的payload构造及变形/" title="XSS的payload构造及变形" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -403,6 +410,30 @@
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/08/XSS的payload构造及变形/" title="XSS的payload构造及变形">
+								XSS的payload构造及变形			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								通常进行XSS脚本攻击时，一般网站都是有防护措施的，比如过滤掉我们script，javascript,或者长度限制等等，这时需要我们对我们的脚本进
+行简单的变形，打到我们的目的，下面是我对常见的一些变形的分类，以及部分操作演示1.使用...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/08/XSS的payload构造及变形/" title="XSS的payload构造及变形">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="XSS的payload构造及变形">
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">
@@ -655,31 +686,6 @@ SYN是标志位，SYN=1表示请求连接
 							<a href="/2019/04/01/HTTP三次挥手和四次挥手/" title="HTTP三次挥手和四次挥手">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="HTTP三次挥手和四次挥手">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/01/状态码/" title="状态码">
-								状态码			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 1日, 2019				
-							</p>
-							<p class="relate-post-content">
-								详细分解：1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。
-
-代码   说明100   （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。101   （切换协议） 请求者...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/01/状态码/" title="状态码">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="状态码">
 							</a>
 						</div>
 					</li>											
